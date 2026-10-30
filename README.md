@@ -13,7 +13,10 @@ Os dados são lidos do lidl.pt por um GitHub Action de hora a hora e publicados 
 | `server.py` | Pré-visualização local com dados ao vivo (`python server.py` → http://localhost:8765) |
 | `index.html` | A página |
 | `stores.json` | Lista das lojas (usada se a API de lojas não estiver disponível) |
-| `watchlist.json` | Produtos extra a consultar, mesmo fora da pesquisa (`[{"id": "11127539", "title": "Bateria 20 V 2 Ah"}]`) |
+
+## Lista de vigilância
+
+Cada visitante pode "vigiar" produtos (ID ou URL do lidl.pt). A lista fica só no browser dele (localStorage) e o stock desses produtos é pedido ao lidl.pt ao vivo, directamente do browser (os endpoints permitem CORS).
 
 ## Publicar no GitHub Pages
 

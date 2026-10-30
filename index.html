@@ -85,9 +85,13 @@ td.dist{color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
         <button class="tab" data-kind="tool" aria-pressed="false">Ferramentas</button>
         <button class="tab" data-kind="all" aria-pressed="false">Tudo Parkside</button>
       </div>
+      <form class="row" id="watchForm" style="margin-left:auto">
+        <input id="watchInput" placeholder="ID ou URL de produto lidl.pt" style="padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);min-width:240px">
+        <button class="btn">+ Vigiar</button>
+      </form>
     </div>
     <div class="products" id="products"></div>
-    <div class="note">Clica nos produtos para os mostrar na tabela. O Lidl PT vende Parkside em campanhas semanais: as baterias só aparecem no site quando estão em folheto, e o stock por loja só existe durante a campanha. Dados actualizados automaticamente de hora a hora.</div>
+    <div class="note">Clica nos produtos para os mostrar na tabela. O Lidl PT vende Parkside em campanhas semanais: as baterias só aparecem no site quando estão em folheto, e o stock por loja só existe durante a campanha. Dados actualizados de hora a hora; os produtos que vigias (guardados só neste browser) são consultados ao vivo.</div>
   </section>
 
   <section>
@@ -111,7 +115,8 @@ td.dist{color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
 const LABEL = {AVAILABLE:"Disponível", LOW_STOCK:"Pouco stock", SOLD_OUT:"Esgotado", UNKNOWN:"Sem info", NA:"—"};
 const state = {
   stores: [], products: [], stock: {}, kind: "battery",
-  selected: new Set(load("sel", [])), here: null, loadedAt: null,
+  selected: new Set(load("sel", [])), here: null, base: [],
+  watch: load("watch", []),   // [{id, title, url}] só neste browser
 };
 function load(k, d){ try { return JSON.parse(localStorage.getItem("pk:"+k)) ?? d } catch { return d } }
 function save(k, v){ try { localStorage.setItem("pk:"+k, JSON.stringify(v)) } catch {} }
@@ -123,6 +128,83 @@ async function getData(refresh){
   const j = await r.json();
   if (!r.ok) throw new Error(j.error || r.status);
   return j;
+}
+
+// ---------- lista de vigilância (localStorage + pedidos directos ao lidl.pt, que permite CORS) ----------
+const LIDL = "https://www.lidl.pt";
+
+function parseId(v){
+  const m = v.split("?")[0].match(/(\d{6,11})(?!.*\d)/);
+  if (!m) return null;
+  return m[1].length === 11 && m[1].endsWith("001") ? m[1].slice(0, -3) : m[1];
+}
+function titleFromUrl(u){
+  const m = String(u || "").match(/\/p\/(?:[^/]+\/)*([^/]+)\/p\d+/);
+  return m ? m[1].replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase()) : null;
+}
+function classify(t){
+  if (/sem bateria/i.test(t)) return "tool";
+  if (/\b(bateria|baterias|carregador|acumulador|ah)\b/i.test(t)) return "battery";
+  return /\b\d{1,2} ?v\b/i.test(t) ? "tool" : "other";
+}
+
+async function lookup(id){
+  // a pesquisa por ID devolve o URL do produto enquanto ele existe no site
+  try {
+    const r = await fetch(`${LIDL}/q/api/search?q=${id}&locale=pt_PT&assortment=PT&version=2.1.0&fetchsize=1`);
+    const j = await r.json();
+    if (j.redirectURL) return {url: LIDL + j.redirectURL, title: titleFromUrl(j.redirectURL)};
+  } catch {}
+  return {};
+}
+
+async function fetchLiveStock(id){
+  try {
+    const ids = state.stores.map(s => s.id).join(",");
+    const r = await fetch(`${LIDL}/p/api/storestock/PT/pt/${id}001?storeids=${ids}`);
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    state.stock[id] = Object.fromEntries((await r.json()).map(x => [x.storeId, x.storeAvailabilityIndicator]));
+  } catch (e) {
+    state.stock[id] = {error: e.message};
+  }
+}
+
+function mergeWatch(){
+  const byId = new Map(state.base.map(p => [p.id, {...p, watched: false}]));
+  for (const w of state.watch){
+    const p = byId.get(w.id);
+    if (p) p.watched = true;
+    else byId.set(w.id, {id: w.id, title: w.title, url: w.url, kind: classify(w.title), watched: true,
+                         badge: "Fora da pesquisa do site · consulta ao vivo"});
+  }
+  state.products = [...byId.values()];
+}
+
+async function refreshWatched(){
+  await Promise.all(state.watch.map(w => fetchLiveStock(w.id)));
+  render();
+}
+
+async function addWatch(raw){
+  const id = parseId(raw);
+  if (!id) return alert("Não encontrei um ID de produto. Cola o URL do lidl.pt ou o número (ex.: 11127539).");
+  if (state.watch.some(w => w.id === id)) return;
+  const found = await lookup(id);
+  const url = found.url || (raw.includes("lidl.pt") ? raw.trim() : `${LIDL}/p/p${id}`);
+  const title = found.title || titleFromUrl(url) || `Produto ${id}`;
+  state.watch.push({id, title, url});
+  save("watch", state.watch);
+  state.selected.add(id); save("sel", [...state.selected]);
+  mergeWatch();
+  await fetchLiveStock(id);
+  render();
+}
+
+function removeWatch(id){
+  state.watch = state.watch.filter(w => w.id !== id);
+  save("watch", state.watch);
+  mergeWatch();
+  render();
 }
 
 function visibleProducts(){
@@ -161,7 +243,7 @@ function renderProducts(){
         <div class="b">${esc(p.badge)}</div>
         <div class="counts">${cs}</div>
       </div>
-      ${p.watched ? `<span class="x">vigiado</span>` : ""}
+      ${p.watched ? `<button class="x" data-unwatch="${p.id}" title="Deixar de vigiar">✕ vigiado</button>` : ""}
     </div>`;
   }).join("");
 }
@@ -209,14 +291,16 @@ async function loadAll(refresh){
   $("#meta").textContent = "A carregar…";
   try {
     const {stores, products, stock, generatedAt} = await getData(refresh);
-    state.stores = stores; state.products = products; state.stock = stock;
-    const ids = new Set(products.map(p => p.id));
+    state.stores = stores; state.base = products; state.stock = stock;
+    mergeWatch();
+    const ids = new Set(state.products.map(p => p.id));
     state.selected = new Set([...state.selected].filter(id => ids.has(id)));
-    if (!state.selected.size) products.filter(p => p.kind === "battery").forEach(p => state.selected.add(p.id));
+    if (!state.selected.size) state.products.filter(p => p.kind === "battery").forEach(p => state.selected.add(p.id));
     save("sel", [...state.selected]);
     render();
     const when = new Date(generatedAt).toLocaleString("pt-PT", {dateStyle: "short", timeStyle: "short"});
     $("#meta").textContent = `${products.length} produtos · ${stores.length} lojas · dados de ${when}`;
+    await refreshWatched();
   } catch (e) {
     $("#meta").innerHTML = `<span>Erro: ${esc(e.message)}</span>`;
   }
@@ -229,11 +313,19 @@ document.querySelectorAll(".tab").forEach(b => b.onclick = () => {
   renderProducts();
 });
 $("#products").onclick = e => {
+  const un = e.target.closest("[data-unwatch]");
+  if (un) return removeWatch(un.dataset.unwatch);
   const c = e.target.closest(".card"); if (!c) return;
   const id = c.dataset.id;
   state.selected.has(id) ? state.selected.delete(id) : state.selected.add(id);
   save("sel", [...state.selected]);
   render();
+};
+$("#watchForm").onsubmit = async e => {
+  e.preventDefault();
+  const v = $("#watchInput").value.trim(); if (!v) return;
+  $("#watchInput").value = "";
+  await addWatch(v);
 };
 $("#refresh").onclick = () => loadAll(true);
 ["#q", "#radius", "#onlyStock"].forEach(s => $(s).addEventListener("input", renderTable));

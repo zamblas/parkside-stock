@@ -13,7 +13,6 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 STORES_FILE = HERE / "stores.json"
-WATCH_FILE = HERE / "watchlist.json"
 
 UA = {"User-Agent": "Mozilla/5.0 (parkside-stock)"}
 SEARCH_URL = "https://www.lidl.pt/q/api/search"
@@ -158,28 +157,11 @@ def search(q):
     return cached(f"search:{q}", SEARCH_TTL, run)
 
 
-def load_watch():
-    try:
-        return json.loads(WATCH_FILE.read_text(encoding="utf-8"))
-    except (FileNotFoundError, ValueError):
-        return []
-
-
 def all_products():
     found = {}
     for q in ("parkside", "parkside bateria", "parkside carregador"):
         for p in search(q):
             found[p["id"]] = p
-    for w in load_watch():
-        pid = str(w["id"])
-        if pid in found:
-            found[pid]["watched"] = True
-        else:
-            title = w.get("title") or f"Produto {pid}"
-            found[pid] = {"id": pid, "title": title, "price": w.get("price"), "image": w.get("image"),
-                          "url": w.get("url") or f"https://www.lidl.pt/p/p{pid}",
-                          "kind": w.get("kind") or classify(title), "watched": True,
-                          "badge": "Fora do site (lista de vigilância)"}
     order = {"battery": 0, "tool": 1, "other": 2}
     return sorted(found.values(), key=lambda p: (order[p["kind"]], p["title"]))
 
