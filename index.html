@@ -50,6 +50,7 @@ a{color:var(--brand)}
 .c-ok{color:var(--ok)} .c-low{color:var(--low)} .c-out{color:var(--out)}
 .filters input[type=search]{flex:1;min-width:200px;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg)}
 .filters label{display:flex;gap:6px;align-items:center;color:var(--muted)}
+.filters select{padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
 .tablewrap{overflow:auto;max-height:70vh;border:1px solid var(--line);border-radius:8px}
 table{border-collapse:separate;border-spacing:0;width:100%}
 th,td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
@@ -89,6 +90,25 @@ td.dist{color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
         <input id="watchInput" placeholder="ID ou URL de produto lidl.pt" style="padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);min-width:240px">
         <button class="btn">+ Vigiar</button>
       </form>
+    </div>
+    <div class="row filters" style="margin-top:12px">
+      <input type="search" id="pq" placeholder="Pesquisar produto por nome…">
+      <label>Mostrar <select id="pstatus">
+        <option value="all">Todos</option>
+        <option value="now">À venda agora</option>
+        <option value="instock">Com stock</option>
+        <option value="soon">Em breve</option>
+        <option value="past">Terminados</option>
+      </select></label>
+      <label>Ordenar <select id="psort">
+        <option value="default">Tipo</option>
+        <option value="name">Nome</option>
+        <option value="price">Preço ↑</option>
+        <option value="stock">Mais lojas com stock</option>
+        <option value="date">Data na loja</option>
+      </select></label>
+      <label><input type="checkbox" id="pselOnly"> Só seleccionados</label>
+      <span id="pcount" style="margin-left:auto;color:var(--muted);font-size:12px"></span>
     </div>
     <div class="products" id="products"></div>
     <div class="note">Clica nos produtos para os mostrar na tabela. O Lidl PT vende Parkside em campanhas semanais: as baterias só aparecem no site quando estão em folheto, e o stock por loja só existe durante a campanha. Dados actualizados de hora a hora; os produtos que vigias (guardados só neste browser) são consultados ao vivo.</div>
@@ -207,8 +227,33 @@ function removeWatch(id){
   render();
 }
 
+function inStock(pid){
+  const c = counts(pid); return c ? c.AVAILABLE + c.LOW_STOCK : 0;
+}
+// datas da campanha vêm em segundos (epoch); produtos vigiados fora do site não as têm
+function phase(p){
+  const now = Date.now() / 1000;
+  if (p.start && p.start > now) return "soon";
+  if (p.end && p.end < now) return "past";
+  if (p.start) return "now";
+  return inStock(p.id) ? "now" : "unknown";
+}
+
 function visibleProducts(){
-  return state.products.filter(p => state.kind === "all" || p.kind === state.kind || (state.kind === "battery" && p.watched));
+  const q = norm($("#pq").value.trim());
+  const st = $("#pstatus").value, sort = $("#psort").value;
+  let list = state.products.filter(p => state.kind === "all" || p.kind === state.kind || (state.kind === "battery" && p.watched));
+  if (q) list = list.filter(p => q.split(/\s+/).every(w => norm(p.title).includes(w)));
+  if (st === "instock") list = list.filter(p => inStock(p.id) > 0);
+  else if (st !== "all") list = list.filter(p => phase(p) === st);
+  if ($("#pselOnly").checked) list = list.filter(p => state.selected.has(p.id));
+  const by = {
+    name: (a, b) => a.title.localeCompare(b.title, "pt"),
+    price: (a, b) => (a.price ?? Infinity) - (b.price ?? Infinity),
+    stock: (a, b) => inStock(b.id) - inStock(a.id),
+    date: (a, b) => (a.start ?? Infinity) - (b.start ?? Infinity),
+  }[sort];
+  return by ? [...list].sort(by) : list;
 }
 function shownProducts(){
   return state.products.filter(p => state.selected.has(p.id));
@@ -223,8 +268,12 @@ function counts(pid){
 
 function renderProducts(){
   const list = visibleProducts();
+  const filtered = $("#pq").value.trim() || $("#pstatus").value !== "all" || $("#pselOnly").checked;
+  $("#pcount").textContent = state.products.length ? `${list.length} produto${list.length === 1 ? "" : "s"}` : "";
   if (!list.length){
-    $("#products").innerHTML = `<div class="empty">${state.kind === "battery"
+    $("#products").innerHTML = `<div class="empty">${filtered
+      ? "Nenhum produto corresponde aos filtros."
+      : state.kind === "battery"
       ? "Nenhuma bateria ou carregador Parkside no site neste momento. Vê o separador “Tudo Parkside” ou adiciona um produto com “Vigiar”."
       : "Sem produtos."}</div>`;
     return;
@@ -328,6 +377,14 @@ $("#watchForm").onsubmit = async e => {
 };
 $("#refresh").onclick = () => loadAll(true);
 ["#q", "#radius", "#onlyStock"].forEach(s => $(s).addEventListener("input", renderTable));
+// filtros de produtos: lembrados neste browser (excepto o texto da pesquisa)
+const pf = load("pfilters", {});
+for (const [id, prop] of [["pstatus", "value"], ["psort", "value"], ["pselOnly", "checked"]]){
+  const el = $("#" + id);
+  if (pf[id] !== undefined) el[prop] = pf[id];
+  el.addEventListener("input", () => { pf[id] = el[prop]; save("pfilters", pf); renderProducts(); });
+}
+$("#pq").addEventListener("input", renderProducts);
 $("#near").onclick = () => {
   if (!navigator.geolocation) return alert("Geolocalização indisponível");
   $("#near").textContent = "📍 A localizar…";
