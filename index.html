@@ -81,9 +81,9 @@ td.dist{color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
   <section>
     <div class="row">
       <div class="tabs" role="group" aria-label="Tipo de produto">
-        <button class="tab" data-kind="battery" aria-pressed="true">Baterias e carregadores</button>
+        <button class="tab" data-kind="all" aria-pressed="true">Tudo Parkside</button>
         <button class="tab" data-kind="tool" aria-pressed="false">Ferramentas</button>
-        <button class="tab" data-kind="all" aria-pressed="false">Tudo Parkside</button>
+        <button class="tab" data-kind="battery" aria-pressed="false">Baterias e carregadores</button>
       </div>
       <form class="row" id="watchForm" style="margin-left:auto">
         <input id="watchInput" placeholder="ID ou URL de produto lidl.pt" style="padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);min-width:240px">
@@ -114,7 +114,7 @@ td.dist{color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
 <script>
 const LABEL = {AVAILABLE:"Disponível", LOW_STOCK:"Pouco stock", SOLD_OUT:"Esgotado", UNKNOWN:"Sem info", NA:"—"};
 const state = {
-  stores: [], products: [], stock: {}, kind: "battery",
+  stores: [], products: [], stock: {}, kind: "all",
   selected: new Set(load("sel", [])), here: null, base: [],
   watch: load("watch", []),   // [{id, title, url}] só neste browser
 };
@@ -295,7 +295,6 @@ async function loadAll(refresh){
     mergeWatch();
     const ids = new Set(state.products.map(p => p.id));
     state.selected = new Set([...state.selected].filter(id => ids.has(id)));
-    if (!state.selected.size) state.products.filter(p => p.kind === "battery").forEach(p => state.selected.add(p.id));
     save("sel", [...state.selected]);
     render();
     const when = new Date(generatedAt).toLocaleString("pt-PT", {dateStyle: "short", timeStyle: "short"});
@@ -339,7 +338,7 @@ $("#near").onclick = () => {
   }, err => { $("#near").textContent = "📍 Perto de mim"; alert("Sem localização: " + err.message) });
 };
 
-const k = load("kind", "battery");
+const k = load("kind", "all");
 document.querySelector(`.tab[data-kind="${k}"]`)?.click();
 loadAll();
 </script>
