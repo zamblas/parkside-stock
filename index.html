@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stock Parkside Lidl</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
 :root{
   --bg:#f4f5f2; --panel:#fff; --ink:#1d2320; --muted:#66706a; --line:#dfe3dd;
@@ -66,6 +68,14 @@ td.dist{color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
 .SOLD_OUT{background:var(--out-bg);color:var(--out)}
 .UNKNOWN,.NA{background:var(--unk-bg);color:var(--unk)}
 .legend{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+#map{height:70vh;border:1px solid var(--line);border-radius:8px;z-index:0}
+.leaflet-popup-content{font:13px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;margin:10px 12px}
+.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:var(--panel);color:var(--ink)}
+.leaflet-popup-content b{display:block}
+.leaflet-popup-content small{color:var(--muted)}
+.leaflet-popup-content table{margin-top:6px;border-spacing:0}
+.leaflet-popup-content td{padding:2px 4px;text-align:left;white-space:normal;border:0}
+.leaflet-popup-content .pill{min-width:0;white-space:nowrap}
 .empty{color:var(--muted);padding:24px;text-align:center}
 .err{color:var(--out)}
 .note{font-size:12px;color:var(--muted);margin-top:8px}
@@ -122,13 +132,18 @@ td.dist{color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
       <label><input type="checkbox" id="onlyStock"> Só lojas com stock</label>
     </div>
     <div class="row legend" style="margin:10px 0">
+      <div class="tabs" role="group" aria-label="Vista" style="margin-right:8px">
+        <button class="tab view" data-view="table" aria-pressed="true">Tabela</button>
+        <button class="tab view" data-view="map" aria-pressed="false">Mapa</button>
+      </div>
       <span class="pill AVAILABLE">Disponível</span>
       <span class="pill LOW_STOCK">Pouco stock</span>
       <span class="pill SOLD_OUT">Esgotado</span>
       <span class="pill UNKNOWN">Sem info</span>
       <span id="count" style="margin-left:auto"></span>
     </div>
-    <div class="tablewrap"><table id="tbl"></table></div>
+    <div class="tablewrap" id="tableView"><table id="tbl"></table></div>
+    <div id="map" hidden></div>
   </section>
 </main>
 <script>
@@ -305,8 +320,7 @@ function dist(a, b){
 }
 const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
-function renderTable(){
-  const prods = shownProducts();
+function filteredStores(prods){
   const q = norm($("#q").value.trim());
   const radius = +$("#radius").value;
   const only = $("#onlyStock").checked;
@@ -317,8 +331,75 @@ function renderTable(){
     const v = state.stock[p.id]?.[s.id]; return v === "AVAILABLE" || v === "LOW_STOCK";
   }));
   if (state.here) rows.sort((a, b) => a.d - b.d);
+  return rows;
+}
 
+function statusOf(p, s){
+  const st = state.stock[p.id];
+  return !st || st.error ? "NA" : (st[s.id] || "UNKNOWN");
+}
+
+function renderStores(){
+  const prods = shownProducts();
+  const rows = filteredStores(prods);
   $("#count").textContent = `${rows.length} de ${state.stores.length} lojas`;
+  state.view === "map" ? renderMap(rows, prods) : renderTable(rows, prods);
+}
+
+// ---------- mapa ----------
+const RANK = {AVAILABLE: 4, LOW_STOCK: 3, SOLD_OUT: 2, UNKNOWN: 1, NA: 0};
+let map, markers, hereMarker, lastFit = "";
+
+function ensureMap(){
+  if (map) return;
+  map = L.map("map", {preferCanvas: true}).setView([39.6, -8.1], 7);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+  markers = L.layerGroup().addTo(map);
+}
+
+function renderMap(rows, prods){
+  ensureMap();
+  const css = getComputedStyle(document.documentElement);
+  const color = v => css.getPropertyValue({AVAILABLE: "--ok", LOW_STOCK: "--low", SOLD_OUT: "--out"}[v] || "--unk").trim();
+  markers.clearLayers();
+  // cor = melhor estado entre os produtos seleccionados; lojas com stock desenhadas por cima
+  const items = rows.filter(s => s.lat != null).map(s => {
+    const best = prods.reduce((b, p) => { const v = statusOf(p, s); return RANK[v] > RANK[b] ? v : b; }, "NA");
+    return {s, best};
+  }).sort((a, b) => RANK[a.best] - RANK[b.best]);
+  for (const {s, best} of items){
+    const list = prods.map(p => { const v = statusOf(p, s);
+      return `<tr><td>${esc(p.title.replace(/^parkside\s*/i, ""))}</td><td><span class="pill ${v}">${LABEL[v]}</span></td></tr>`; }).join("");
+    L.circleMarker([s.lat, s.lng], {radius: best === "AVAILABLE" || best === "LOW_STOCK" ? 8 : 6,
+      color: "#fff", weight: 1.5, fillColor: color(best), fillOpacity: .95})
+      .bindPopup(`<b>${esc(s.name)}</b><small>${esc(s.street)}, ${esc(s.zip)} ${esc(s.city)}${s.d != null ? ` · ${s.d.toFixed(1)} km` : ""}</small>
+        ${prods.length ? `<table>${list}</table>` : `<div><small>Escolhe produtos para ver o stock.</small></div>`}
+        <div style="margin-top:6px"><a href="https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lng}" target="_blank" rel="noopener">Como chegar ↗</a></div>`)
+      .addTo(markers);
+  }
+  if (hereMarker) hereMarker.remove();
+  if (state.here) hereMarker = L.circleMarker([state.here.lat, state.here.lng], {radius: 7, color: "#fff", weight: 2, fillColor: "#2b6cff", fillOpacity: 1})
+    .bindTooltip("Estás aqui").addTo(map);
+  // reenquadrar só quando o conjunto de lojas muda (não ao trocar produtos)
+  const key = items.map(i => i.s.id).join(",");
+  if (key !== lastFit && items.length){
+    lastFit = key;
+    map.fitBounds(L.latLngBounds(items.map(i => [i.s.lat, i.s.lng])), {padding: [30, 30], maxZoom: 13});
+  }
+}
+
+function setView(v){
+  state.view = v; save("view", v);
+  document.querySelectorAll(".tab.view").forEach(b => b.setAttribute("aria-pressed", b.dataset.view === v));
+  $("#tableView").hidden = v !== "table";
+  $("#map").hidden = v !== "map";
+  renderStores();
+  if (v === "map") map.invalidateSize();
+}
+
+function renderTable(rows, prods){
   if (!prods.length){
     $("#tbl").innerHTML = `<tbody><tr><td class="empty">Escolhe um ou mais produtos acima.</td></tr></tbody>`;
     return;
@@ -327,14 +408,13 @@ function renderTable(){
     `<th class="prod" title="${esc(p.title)}">${esc(p.title.replace(/^parkside\s*/i, ""))}</th>`).join("")}</tr></thead>`;
   const body = rows.map(s => `<tr><th>${esc(s.name)}<small>${esc(s.street)}, ${esc(s.zip)} ${esc(s.city)}</small></th>${
     state.here ? `<td class="dist">${s.d.toFixed(1)}</td>` : ""}${prods.map(p => {
-      const st = state.stock[p.id];
-      const v = !st ? "NA" : st.error ? "NA" : (st[s.id] || "UNKNOWN");
-      return `<td><span class="pill ${v}">${!st ? "…" : LABEL[v]}</span></td>`;
+      const v = statusOf(p, s);
+      return `<td><span class="pill ${v}">${!state.stock[p.id] ? "…" : LABEL[v]}</span></td>`;
     }).join("")}</tr>`).join("");
   $("#tbl").innerHTML = head + `<tbody>${body || `<tr><td class="empty" colspan="${prods.length+2}">Nenhuma loja corresponde aos filtros.</td></tr>`}</tbody>`;
 }
 
-function render(){ renderProducts(); renderTable(); }
+function render(){ renderProducts(); renderStores(); }
 
 async function loadAll(refresh){
   $("#meta").textContent = "A carregar…";
@@ -354,9 +434,9 @@ async function loadAll(refresh){
   }
 }
 
-document.querySelectorAll(".tab").forEach(b => b.onclick = () => {
+document.querySelectorAll(".tab[data-kind]").forEach(b => b.onclick = () => {
   state.kind = b.dataset.kind;
-  document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-pressed", t === b));
+  document.querySelectorAll(".tab[data-kind]").forEach(t => t.setAttribute("aria-pressed", t === b));
   save("kind", state.kind);
   renderProducts();
 });
@@ -376,7 +456,7 @@ $("#watchForm").onsubmit = async e => {
   await addWatch(v);
 };
 $("#refresh").onclick = () => loadAll(true);
-["#q", "#radius", "#onlyStock"].forEach(s => $(s).addEventListener("input", renderTable));
+["#q", "#radius", "#onlyStock"].forEach(s => $(s).addEventListener("input", renderStores));
 // filtros de produtos: lembrados neste browser (excepto o texto da pesquisa)
 const pf = load("pfilters", {});
 for (const [id, prop] of [["pstatus", "value"], ["psort", "value"], ["pselOnly", "checked"]]){
@@ -391,12 +471,17 @@ $("#near").onclick = () => {
   navigator.geolocation.getCurrentPosition(p => {
     state.here = {lat: p.coords.latitude, lng: p.coords.longitude};
     $("#near").textContent = "📍 Perto de mim ✓";
-    renderTable();
+    renderStores();
   }, err => { $("#near").textContent = "📍 Perto de mim"; alert("Sem localização: " + err.message) });
 };
 
+document.querySelectorAll(".tab.view").forEach(b => b.onclick = () => setView(b.dataset.view));
+
 const k = load("kind", "all");
 document.querySelector(`.tab[data-kind="${k}"]`)?.click();
+state.view = window.L ? load("view", "table") : "table";   // sem Leaflet (CDN em baixo) fica só a tabela
+if (!window.L) document.querySelector('.tab.view[data-view="map"]').disabled = true;
+setView(state.view);
 loadAll();
 </script>
 </body>
