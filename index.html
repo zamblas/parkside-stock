@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stock Parkside Lidl</title>
+<style>
+:root{
+  --bg:#f4f5f2; --panel:#fff; --ink:#1d2320; --muted:#66706a; --line:#dfe3dd;
+  --brand:#0b6e4f; --brand-ink:#fff; --accent:#f2b705;
+  --ok:#1f8a4c; --ok-bg:#dff3e6; --low:#a86400; --low-bg:#fdecc8;
+  --out:#b3261e; --out-bg:#fbe0dd; --unk:#7a817c; --unk-bg:#eceeea;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#121614; --panel:#1b201d; --ink:#e7ebe8; --muted:#97a19b; --line:#2c332f;
+    --brand:#2fa77a; --brand-ink:#08130e;
+    --ok:#6fd69a; --ok-bg:#163524; --low:#f2be5c; --low-bg:#3a2b0f;
+    --out:#ff8f86; --out-bg:#3d1714; --unk:#9aa29d; --unk-bg:#252b28;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:var(--brand);color:var(--brand-ink);padding:14px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+header h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.2px}
+header h1 span{background:var(--accent);color:#1d2320;padding:1px 6px;border-radius:4px;margin-left:6px;font-size:13px}
+header .meta{opacity:.85;font-size:12.5px;margin-left:auto}
+button,input,select{font:inherit;color:inherit}
+.btn{border:1px solid var(--line);background:var(--panel);padding:6px 12px;border-radius:6px;cursor:pointer}
+.btn:hover{border-color:var(--brand)}
+header .btn{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:var(--brand-ink)}
+main{padding:16px 20px;max-width:1600px;margin:0 auto}
+section{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:14px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tabs{display:flex;gap:4px}
+.tab{border:1px solid var(--line);background:transparent;padding:5px 12px;border-radius:999px;cursor:pointer}
+.tab[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin-top:12px}
+.card{display:flex;gap:10px;border:1px solid var(--line);border-radius:8px;padding:8px;cursor:pointer;position:relative;background:var(--panel)}
+.card.sel{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand) inset}
+.card img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:6px;flex:none}
+.card .t{font-weight:600;font-size:13px;line-height:1.25}
+.card .p{font-weight:700;color:var(--brand)}
+a{color:var(--brand)}
+.card .b{font-size:11.5px;color:var(--muted)}
+.card .kind{position:absolute;top:6px;right:6px;font-size:10px;padding:1px 6px;border-radius:4px;background:var(--accent);color:#1d2320;font-weight:700}
+.card .x{position:absolute;bottom:4px;right:6px;font-size:11px;color:var(--muted);background:none;border:0;cursor:pointer}
+.counts{display:flex;gap:6px;margin-top:4px;font-size:11.5px}
+.counts b{font-weight:700}
+.c-ok{color:var(--ok)} .c-low{color:var(--low)} .c-out{color:var(--out)}
+.filters input[type=search]{flex:1;min-width:200px;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg)}
+.filters label{display:flex;gap:6px;align-items:center;color:var(--muted)}
+.tablewrap{overflow:auto;max-height:70vh;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:separate;border-spacing:0;width:100%}
+th,td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+thead th{position:sticky;top:0;background:var(--panel);z-index:2;font-size:12px;vertical-align:bottom}
+thead th.prod{max-width:150px;white-space:normal;font-weight:600;text-align:center}
+tbody th{position:sticky;left:0;background:var(--panel);z-index:1;font-weight:500}
+tbody th small{display:block;color:var(--muted);font-weight:400}
+td{text-align:center}
+td.dist{color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
+.pill{display:inline-block;min-width:78px;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600}
+.AVAILABLE{background:var(--ok-bg);color:var(--ok)}
+.LOW_STOCK{background:var(--low-bg);color:var(--low)}
+.SOLD_OUT{background:var(--out-bg);color:var(--out)}
+.UNKNOWN,.NA{background:var(--unk-bg);color:var(--unk)}
+.legend{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.empty{color:var(--muted);padding:24px;text-align:center}
+.err{color:var(--out)}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+@media (max-width:600px){main{padding:12px}header{padding:12px 16px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Stock Parkside <span>Lidl PT</span></h1>
+  <button class="btn" id="refresh">↻ Actualizar</button>
+  <div class="meta" id="meta">A carregar…</div>
+</header>
+<main>
+  <section>
+    <div class="row">
+      <div class="tabs" role="group" aria-label="Tipo de produto">
+        <button class="tab" data-kind="battery" aria-pressed="true">Baterias e carregadores</button>
+        <button class="tab" data-kind="tool" aria-pressed="false">Ferramentas</button>
+        <button class="tab" data-kind="all" aria-pressed="false">Tudo Parkside</button>
+      </div>
+    </div>
+    <div class="products" id="products"></div>
+    <div class="note">Clica nos produtos para os mostrar na tabela. O Lidl PT vende Parkside em campanhas semanais: as baterias só aparecem no site quando estão em folheto, e o stock por loja só existe durante a campanha. Dados actualizados automaticamente de hora a hora.</div>
+  </section>
+
+  <section>
+    <div class="row filters">
+      <input type="search" id="q" placeholder="Filtrar lojas: cidade, código postal, rua…">
+      <button class="btn" id="near">📍 Perto de mim</button>
+      <label>Raio <select id="radius"><option value="0">—</option><option>10</option><option selected>25</option><option>50</option><option>100</option></select> km</label>
+      <label><input type="checkbox" id="onlyStock"> Só lojas com stock</label>
+    </div>
+    <div class="row legend" style="margin:10px 0">
+      <span class="pill AVAILABLE">Disponível</span>
+      <span class="pill LOW_STOCK">Pouco stock</span>
+      <span class="pill SOLD_OUT">Esgotado</span>
+      <span class="pill UNKNOWN">Sem info</span>
+      <span id="count" style="margin-left:auto"></span>
+    </div>
+    <div class="tablewrap"><table id="tbl"></table></div>
+  </section>
+</main>
+<script>
+const LABEL = {AVAILABLE:"Disponível", LOW_STOCK:"Pouco stock", SOLD_OUT:"Esgotado", UNKNOWN:"Sem info", NA:"—"};
+const state = {
+  stores: [], products: [], stock: {}, kind: "battery",
+  selected: new Set(load("sel", [])), here: null, loadedAt: null,
+};
+function load(k, d){ try { return JSON.parse(localStorage.getItem("pk:"+k)) ?? d } catch { return d } }
+function save(k, v){ try { localStorage.setItem("pk:"+k, JSON.stringify(v)) } catch {} }
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+async function getData(refresh){
+  const r = await fetch("data.json" + (refresh ? "?refresh=" + Date.now() : ""), {cache: "no-store"});
+  const j = await r.json();
+  if (!r.ok) throw new Error(j.error || r.status);
+  return j;
+}
+
+function visibleProducts(){
+  return state.products.filter(p => state.kind === "all" || p.kind === state.kind || (state.kind === "battery" && p.watched));
+}
+function shownProducts(){
+  return state.products.filter(p => state.selected.has(p.id));
+}
+
+function counts(pid){
+  const s = state.stock[pid]; const c = {AVAILABLE:0, LOW_STOCK:0, SOLD_OUT:0};
+  if (!s || s.error) return null;
+  for (const v of Object.values(s)) if (v in c) c[v]++;
+  return c;
+}
+
+function renderProducts(){
+  const list = visibleProducts();
+  if (!list.length){
+    $("#products").innerHTML = `<div class="empty">${state.kind === "battery"
+      ? "Nenhuma bateria ou carregador Parkside no site neste momento. Vê o separador “Tudo Parkside” ou adiciona um produto com “Vigiar”."
+      : "Sem produtos."}</div>`;
+    return;
+  }
+  $("#products").innerHTML = list.map(p => {
+    const c = counts(p.id);
+    const cs = !state.stock[p.id] ? `<span class="b">a carregar stock…</span>`
+      : state.stock[p.id].error ? `<span class="err">sem dados de stock</span>`
+      : `<span class="c-ok"><b>${c.AVAILABLE}</b> disp.</span><span class="c-low"><b>${c.LOW_STOCK}</b> pouco</span><span class="c-out"><b>${c.SOLD_OUT}</b> esg.</span>`;
+    return `<div class="card ${state.selected.has(p.id) ? "sel" : ""}" data-id="${p.id}" title="${esc(p.title)}">
+      ${p.kind === "battery" ? `<span class="kind">BATERIA</span>` : ""}
+      ${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy">` : ""}
+      <div>
+        <div class="t">${esc(p.title.replace(/^parkside\s*/i, ""))}</div>
+        <div><span class="p">${p.price != null ? p.price.toFixed(2) + " €" : ""}</span> <a href="${esc(p.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">ver ↗</a></div>
+        <div class="b">${esc(p.badge)}</div>
+        <div class="counts">${cs}</div>
+      </div>
+      ${p.watched ? `<span class="x">vigiado</span>` : ""}
+    </div>`;
+  }).join("");
+}
+
+function dist(a, b){
+  const R = 6371, r = x => x * Math.PI / 180;
+  const dLat = r(b.lat - a.lat), dLng = r(b.lng - a.lng);
+  const h = Math.sin(dLat/2)**2 + Math.cos(r(a.lat))*Math.cos(r(b.lat))*Math.sin(dLng/2)**2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+
+function renderTable(){
+  const prods = shownProducts();
+  const q = norm($("#q").value.trim());
+  const radius = +$("#radius").value;
+  const only = $("#onlyStock").checked;
+  let rows = state.stores.map(s => ({...s, d: state.here ? dist(state.here, s) : null}));
+  if (q) rows = rows.filter(s => norm(`${s.name} ${s.street} ${s.city} ${s.zip}`).includes(q));
+  if (state.here && radius) rows = rows.filter(s => s.d <= radius);
+  if (only && prods.length) rows = rows.filter(s => prods.some(p => {
+    const v = state.stock[p.id]?.[s.id]; return v === "AVAILABLE" || v === "LOW_STOCK";
+  }));
+  if (state.here) rows.sort((a, b) => a.d - b.d);
+
+  $("#count").textContent = `${rows.length} de ${state.stores.length} lojas`;
+  if (!prods.length){
+    $("#tbl").innerHTML = `<tbody><tr><td class="empty">Escolhe um ou mais produtos acima.</td></tr></tbody>`;
+    return;
+  }
+  const head = `<thead><tr><th>Loja</th>${state.here ? "<th>km</th>" : ""}${prods.map(p =>
+    `<th class="prod" title="${esc(p.title)}">${esc(p.title.replace(/^parkside\s*/i, ""))}</th>`).join("")}</tr></thead>`;
+  const body = rows.map(s => `<tr><th>${esc(s.name)}<small>${esc(s.street)}, ${esc(s.zip)} ${esc(s.city)}</small></th>${
+    state.here ? `<td class="dist">${s.d.toFixed(1)}</td>` : ""}${prods.map(p => {
+      const st = state.stock[p.id];
+      const v = !st ? "NA" : st.error ? "NA" : (st[s.id] || "UNKNOWN");
+      return `<td><span class="pill ${v}">${!st ? "…" : LABEL[v]}</span></td>`;
+    }).join("")}</tr>`).join("");
+  $("#tbl").innerHTML = head + `<tbody>${body || `<tr><td class="empty" colspan="${prods.length+2}">Nenhuma loja corresponde aos filtros.</td></tr>`}</tbody>`;
+}
+
+function render(){ renderProducts(); renderTable(); }
+
+async function loadAll(refresh){
+  $("#meta").textContent = "A carregar…";
+  try {
+    const {stores, products, stock, generatedAt} = await getData(refresh);
+    state.stores = stores; state.products = products; state.stock = stock;
+    const ids = new Set(products.map(p => p.id));
+    state.selected = new Set([...state.selected].filter(id => ids.has(id)));
+    if (!state.selected.size) products.filter(p => p.kind === "battery").forEach(p => state.selected.add(p.id));
+    save("sel", [...state.selected]);
+    render();
+    const when = new Date(generatedAt).toLocaleString("pt-PT", {dateStyle: "short", timeStyle: "short"});
+    $("#meta").textContent = `${products.length} produtos · ${stores.length} lojas · dados de ${when}`;
+  } catch (e) {
+    $("#meta").innerHTML = `<span>Erro: ${esc(e.message)}</span>`;
+  }
+}
+
+document.querySelectorAll(".tab").forEach(b => b.onclick = () => {
+  state.kind = b.dataset.kind;
+  document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-pressed", t === b));
+  save("kind", state.kind);
+  renderProducts();
+});
+$("#products").onclick = e => {
+  const c = e.target.closest(".card"); if (!c) return;
+  const id = c.dataset.id;
+  state.selected.has(id) ? state.selected.delete(id) : state.selected.add(id);
+  save("sel", [...state.selected]);
+  render();
+};
+$("#refresh").onclick = () => loadAll(true);
+["#q", "#radius", "#onlyStock"].forEach(s => $(s).addEventListener("input", renderTable));
+$("#near").onclick = () => {
+  if (!navigator.geolocation) return alert("Geolocalização indisponível");
+  $("#near").textContent = "📍 A localizar…";
+  navigator.geolocation.getCurrentPosition(p => {
+    state.here = {lat: p.coords.latitude, lng: p.coords.longitude};
+    $("#near").textContent = "📍 Perto de mim ✓";
+    renderTable();
+  }, err => { $("#near").textContent = "📍 Perto de mim"; alert("Sem localização: " + err.message) });
+};
+
+const k = load("kind", "battery");
+document.querySelector(`.tab[data-kind="${k}"]`)?.click();
+loadAll();
+</script>
+</body>
+</html>

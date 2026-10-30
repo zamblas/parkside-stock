@@ -1,0 +1,2675 @@
+[
+ {
+  "id": "114",
+  "name": "Abrantes",
+  "street": "Avenida D. João I 1",
+  "city": "Abrantes",
+  "zip": "2200-233",
+  "lat": 39.46893,
+  "lng": -8.20116
+ },
+ {
+  "id": "585",
+  "name": "Albergaria a Velha",
+  "street": "Variante do Sobreiro 2",
+  "city": "Albergaria-a-Velha",
+  "zip": "3850-266",
+  "lat": 40.70486,
+  "lng": -8.48385
+ },
+ {
+  "id": "357",
+  "name": "Albufeira",
+  "street": "Rua Baden Powel 1",
+  "city": "Albufeira",
+  "zip": "8200-131",
+  "lat": 37.09547,
+  "lng": -8.24981
+ },
+ {
+  "id": "354",
+  "name": "Alcácer do Sal",
+  "street": "Rua Olival da Capela",
+  "city": "Alcacer do Sal",
+  "zip": "7580-206",
+  "lat": 38.38001,
+  "lng": -8.5123
+ },
+ {
+  "id": "405",
+  "name": "Alcanena",
+  "street": "Avenida Ilha do Sal",
+  "city": "Alcanena",
+  "zip": "2380-510",
+  "lat": 39.46341,
+  "lng": -8.66192
+ },
+ {
+  "id": "137",
+  "name": "Alcobaça",
+  "street": "Rua de Leiria 1",
+  "city": "Alcobaça",
+  "zip": "2460-059",
+  "lat": 39.54764,
+  "lng": -8.96711
+ },
+ {
+  "id": "409",
+  "name": "Alcobaça - Benedita",
+  "street": "Rua Rei da Memória 6",
+  "city": "Alcobaça",
+  "zip": "2475-011",
+  "lat": 39.43341,
+  "lng": -8.97883
+ },
+ {
+  "id": "352",
+  "name": "Alcochete",
+  "street": "Lagoa do Laparo 95",
+  "city": "Alcochete",
+  "zip": "2890-112",
+  "lat": 38.7507,
+  "lng": -8.9575
+ },
+ {
+  "id": "444",
+  "name": "Alenquer",
+  "street": "Variante Álvaro Pedro 2",
+  "city": "Alenquer",
+  "zip": "2580-351",
+  "lat": 39.04038,
+  "lng": -8.98771
+ },
+ {
+  "id": "340",
+  "name": "Almada - Feijó",
+  "street": "Rua dos Castanheiros 30, 30A",
+  "city": "Almada",
+  "zip": "2810-035",
+  "lat": 38.65425,
+  "lng": -9.15839
+ },
+ {
+  "id": "367",
+  "name": "Almada - Pragal",
+  "street": "Rua de Abel Salazar 11",
+  "city": "Almada",
+  "zip": "2805-312",
+  "lat": 38.67046,
+  "lng": -9.17056
+ },
+ {
+  "id": "360",
+  "name": "Almada - Sobreda",
+  "street": "Rua Quinta do Salgado 14",
+  "city": "Almada",
+  "zip": "2815-756",
+  "lat": 38.64657,
+  "lng": -9.18025
+ },
+ {
+  "id": "538",
+  "name": "Charneca da Caparica",
+  "street": "Rua de Oliveira Feijão",
+  "city": "Almada",
+  "zip": "2820-205",
+  "lat": 38.6232,
+  "lng": -9.19498
+ },
+ {
+  "id": "582",
+  "name": "Monte de Caparica",
+  "street": "N377-1",
+  "city": "Almada",
+  "zip": "2829-516",
+  "lat": 38.65859,
+  "lng": -9.20372
+ },
+ {
+  "id": "513",
+  "name": "Almeirim",
+  "street": "Rua do Matadouro Municipal 123",
+  "city": "Almeirim",
+  "zip": "2080-107",
+  "lat": 39.19442,
+  "lng": -8.61957
+ },
+ {
+  "id": "469",
+  "name": "Amadora - Alfragide",
+  "street": "Estrada da Ponte 4",
+  "city": "Amadora",
+  "zip": "2610-140",
+  "lat": 38.74089,
+  "lng": -9.2253
+ },
+ {
+  "id": "119",
+  "name": "Amadora - Rua de Angola",
+  "street": "Rua de Angola 13",
+  "city": "Amadora",
+  "zip": "2700-058",
+  "lat": 38.75911,
+  "lng": -9.24391
+ },
+ {
+  "id": "552",
+  "name": "Amadora - Venda Nova",
+  "street": "Rua João de Deus 5",
+  "city": "Amadora",
+  "zip": "2700-486",
+  "lat": 38.75419,
+  "lng": -9.21813
+ },
+ {
+  "id": "520",
+  "name": "Amarante -  S. Gonçalo",
+  "street": "Rua Manuel António da Mota 392",
+  "city": "Amarante",
+  "zip": "4600-282",
+  "lat": 41.27358,
+  "lng": -8.08931
+ },
+ {
+  "id": "570",
+  "name": "Anadia - Rua das Flores",
+  "street": "Rua das Flores",
+  "city": "Anadia",
+  "zip": "3780-320",
+  "lat": 40.44294,
+  "lng": -8.45191
+ },
+ {
+  "id": "584",
+  "name": "Arcos de Valdevez",
+  "street": "Rua A",
+  "city": "Arcos de Valdevez",
+  "zip": "4970-243",
+  "lat": 41.82706,
+  "lng": -8.41529
+ },
+ {
+  "id": "534",
+  "name": "Arganil",
+  "street": "Rua Mariano Lopes Morgado 360",
+  "city": "Arganil",
+  "zip": "3300-064",
+  "lat": 40.22521,
+  "lng": -8.05751
+ },
+ {
+  "id": "183",
+  "name": "Arruda dos Vinhos",
+  "street": "EN 428 Km 18,5",
+  "city": "Arruda dos Vinhos",
+  "zip": "2630-111",
+  "lat": 38.99306,
+  "lng": -9.07888
+ },
+ {
+  "id": "517",
+  "name": "Aveiro - Esgueira",
+  "street": "Avenida da Europa 458",
+  "city": "Aveiro",
+  "zip": "3800-034",
+  "lat": 40.6631,
+  "lng": -8.61201
+ },
+ {
+  "id": "636",
+  "name": "Aveiro Verdemilho",
+  "street": "Avenida da Europa 805",
+  "city": "Aveiro",
+  "zip": "3810-384",
+  "lat": 40.61368,
+  "lng": -8.6555
+ },
+ {
+  "id": "464",
+  "name": "Barcelos",
+  "street": "Rua Filipa Borges",
+  "city": "Barcelos",
+  "zip": "4750-822",
+  "lat": 41.5329,
+  "lng": -8.62641
+ },
+ {
+  "id": "460",
+  "name": "Barreiro - Lavradio",
+  "street": "Rua da Indústria 19",
+  "city": "Barreiro",
+  "zip": "2835-418",
+  "lat": 38.66927,
+  "lng": -9.05629
+ },
+ {
+  "id": "528",
+  "name": "Barreiro - Luso",
+  "street": "Rua Miguel Bombarda 88",
+  "city": "Barreiro",
+  "zip": "2830-570",
+  "lat": 38.65763,
+  "lng": -9.07166
+ },
+ {
+  "id": "490",
+  "name": "Barreiro - Quinta das Canas",
+  "street": "Av. Escola dos Fuzileiros Navais 210",
+  "city": "Barreiro",
+  "zip": "2830-239",
+  "lat": 38.64197,
+  "lng": -9.05985
+ },
+ {
+  "id": "646",
+  "name": "Penalva",
+  "street": "Rua Quinta do Peliche",
+  "city": "Barreiro",
+  "zip": "2830-441",
+  "lat": 38.58829,
+  "lng": -9.02125
+ },
+ {
+  "id": "328",
+  "name": "Beja",
+  "street": "IP2 Km 345",
+  "city": "Beja",
+  "zip": "7800-346",
+  "lat": 38.00573,
+  "lng": -7.87144
+ },
+ {
+  "id": "561",
+  "name": "Porto Alto",
+  "street": "Rua 25 de Abril 1",
+  "city": "Benavente",
+  "zip": "2135-002",
+  "lat": 38.92259,
+  "lng": -8.88252
+ },
+ {
+  "id": "175",
+  "name": "Bombarral",
+  "street": "Rua Mouzinho de Albuquerque 55",
+  "city": "Bombarral",
+  "zip": "2540-127",
+  "lat": 39.26473,
+  "lng": -9.15456
+ },
+ {
+  "id": "524",
+  "name": "Braga - Av. Im. Conc.",
+  "street": "Avenida da Imaculada Conceição 523",
+  "city": "Braga",
+  "zip": "4700-034",
+  "lat": 41.54401,
+  "lng": -8.42676
+ },
+ {
+  "id": "420",
+  "name": "Braga - Av. R. Smith",
+  "street": "Av. Robert Smith 2",
+  "city": "Braga",
+  "zip": "4715-276",
+  "lat": 41.54242,
+  "lng": -8.39994
+ },
+ {
+  "id": "496",
+  "name": "Braga - Infias",
+  "street": "Rua Américo Rodrigues Barbosa 1",
+  "city": "Braga",
+  "zip": "4710-007",
+  "lat": 41.55995,
+  "lng": -8.41734
+ },
+ {
+  "id": "259",
+  "name": "Bragança",
+  "street": "Rua Dr. Alexandre Faria B",
+  "city": "Bragança",
+  "zip": "5300-128",
+  "lat": 41.81086,
+  "lng": -6.76178
+ },
+ {
+  "id": "176",
+  "name": "Caldas da Rainha",
+  "street": "Rua Dr. Bernardino A. Carvalho Pargana 107",
+  "city": "Caldas da Rainha",
+  "zip": "2500-241",
+  "lat": 39.41068,
+  "lng": -9.14065
+ },
+ {
+  "id": "501",
+  "name": "Caldas da Rainha - Rua São João de Deus",
+  "street": "Rua S. João de Deus 8",
+  "city": "Caldas da Rainha",
+  "zip": "2500-885",
+  "lat": 39.39817,
+  "lng": -9.13831
+ },
+ {
+  "id": "454",
+  "name": "Cantanhede",
+  "street": "Av. Prof. Aníbal de Oliveira 38",
+  "city": "Cantanhede",
+  "zip": "3060-851",
+  "lat": 40.34789,
+  "lng": -8.58381
+ },
+ {
+  "id": "545",
+  "name": "Cartaxo",
+  "street": "Rua do Progresso 2",
+  "city": "Cartaxo",
+  "zip": "2070-085",
+  "lat": 39.16501,
+  "lng": -8.78285
+ },
+ {
+  "id": "466",
+  "name": "Cascais - Abóboda",
+  "street": "Rua Luís Amaro Bexiga 30",
+  "city": "Cascais",
+  "zip": "2785-035",
+  "lat": 38.72841,
+  "lng": -9.33541
+ },
+ {
+  "id": "153",
+  "name": "Cascais - Alcoitão",
+  "street": "Avenida da República 2562",
+  "city": "Cascais",
+  "zip": "2645-565",
+  "lat": 38.73524,
+  "lng": -9.3964
+ },
+ {
+  "id": "478",
+  "name": "Cascais - Fontaínhas",
+  "street": "Rua S. José 102",
+  "city": "Cascais",
+  "zip": "2750-134",
+  "lat": 38.70871,
+  "lng": -9.42169
+ },
+ {
+  "id": "488",
+  "name": "Cascais - Rebelva",
+  "street": "Rua João Villaret 74",
+  "city": "Cascais",
+  "zip": "2785-404",
+  "lat": 38.69572,
+  "lng": -9.34424
+ },
+ {
+  "id": "158",
+  "name": "Cascais - Sassoeiros",
+  "street": "Rua Luís Camões 268",
+  "city": "Cascais",
+  "zip": "2775-376",
+  "lat": 38.70165,
+  "lng": -9.32652
+ },
+ {
+  "id": "474",
+  "name": "Cascais - Tires",
+  "street": "Rua Almeida Garrett 441",
+  "city": "Cascais",
+  "zip": "2785-338",
+  "lat": 38.71477,
+  "lng": -9.34455
+ },
+ {
+  "id": "448",
+  "name": "Cascais - Torre",
+  "street": "Rua da Torre 831",
+  "city": "Cascais",
+  "zip": "2750-269",
+  "lat": 38.70348,
+  "lng": -9.44294
+ },
+ {
+  "id": "620",
+  "name": "Alcains",
+  "street": "Estrada de São Domingos",
+  "city": "Castelo Branco",
+  "zip": "6005-010",
+  "lat": 39.91778,
+  "lng": -7.47062
+ },
+ {
+  "id": "117",
+  "name": "Castelo Branco",
+  "street": "Rua Camilo Castelo Branco 18",
+  "city": "Castelo Branco",
+  "zip": "6000-157",
+  "lat": 39.8209,
+  "lng": -7.48634
+ },
+ {
+  "id": "425",
+  "name": "Castelo Branco - Montalvão",
+  "street": "Avenida Professor Dr. Egas Moniz 3",
+  "city": "Castelo Branco",
+  "zip": "6000-901",
+  "lat": 39.80961,
+  "lng": -7.51338
+ },
+ {
+  "id": "287",
+  "name": "Castelo de Paiva",
+  "street": "Rua Strecht de Vasconcelos 300",
+  "city": "Castelo de Paiva",
+  "zip": "4550-150",
+  "lat": 41.0383,
+  "lng": -8.26197
+ },
+ {
+  "id": "603",
+  "name": "Castro Verde",
+  "street": "Rua Nova da Feira 33",
+  "city": "Castro Verde",
+  "zip": "7780-201",
+  "lat": 37.69399,
+  "lng": -8.08856
+ },
+ {
+  "id": "298",
+  "name": "Chaves",
+  "street": "Avenida da Trindade 27",
+  "city": "Chaves",
+  "zip": "5400-554",
+  "lat": 41.75947,
+  "lng": -7.47017
+ },
+ {
+  "id": "264",
+  "name": "Coimbra - Eiras",
+  "street": "Rua Dr. Manuel Almeida e Sousa 86",
+  "city": "Coimbra",
+  "zip": "3025-046",
+  "lat": 40.22771,
+  "lng": -8.43879
+ },
+ {
+  "id": "261",
+  "name": "Coimbra - Sta. Clara",
+  "street": "Rua do Lagar 1",
+  "city": "Coimbra",
+  "zip": "3040-002",
+  "lat": 40.19918,
+  "lng": -8.44025
+ },
+ {
+  "id": "278",
+  "name": "Condeixa-a-Nova",
+  "street": "Urbanização Faia Nova 2",
+  "city": "Condeixa-a-Nova",
+  "zip": "3150-123",
+  "lat": 40.11003,
+  "lng": -8.50757
+ },
+ {
+  "id": "174",
+  "name": "Coruche",
+  "street": "Quinta das Baleias 18",
+  "city": "Coruche",
+  "zip": "2100-138",
+  "lat": 38.96098,
+  "lng": -8.52059
+ },
+ {
+  "id": "481",
+  "name": "Covilhã",
+  "street": "Alameda Pêro da Covilhã 51",
+  "city": "Covilhã",
+  "zip": "6200-507",
+  "lat": 40.26925,
+  "lng": -7.50556
+ },
+ {
+  "id": "321",
+  "name": "Elvas",
+  "street": "Avenida de Badajoz 1",
+  "city": "Elvas",
+  "zip": "7350-097",
+  "lat": 38.87527,
+  "lng": -7.15948
+ },
+ {
+  "id": "414",
+  "name": "Entroncamento",
+  "street": "Rua Dr. Francisco Sá Carneiro 59",
+  "city": "Entroncamento",
+  "zip": "2330-148",
+  "lat": 39.47321,
+  "lng": -8.47651
+ },
+ {
+  "id": "465",
+  "name": "Espinho - Rua 43",
+  "street": "Rua 43 582",
+  "city": "Espinho",
+  "zip": "4500-815",
+  "lat": 40.99977,
+  "lng": -8.63907
+ },
+ {
+  "id": "267",
+  "name": "Esposende",
+  "street": "Av. Visconde S. Januário EN ,13 - Lugar de Areia - Fonte Boa",
+  "city": "Esposende",
+  "zip": "4740-415",
+  "lat": 41.50167,
+  "lng": -8.7597
+ },
+ {
+  "id": "473",
+  "name": "Estarreja - Rua Alexandre Miranda",
+  "street": "Rua Dr. Tavares da Silva",
+  "city": "Estarreja",
+  "zip": "3860-377",
+  "lat": 40.76152,
+  "lng": -8.57044
+ },
+ {
+  "id": "449",
+  "name": "Estremoz",
+  "street": "Adega do Perdigão 1",
+  "city": "Estremoz",
+  "zip": "7100-064",
+  "lat": 38.84996,
+  "lng": -7.58512
+ },
+ {
+  "id": "268",
+  "name": "Fafe",
+  "street": "Rua Cidade de Guimarães 285",
+  "city": "Fafe",
+  "zip": "4820-178",
+  "lat": 41.45173,
+  "lng": -8.18799
+ },
+ {
+  "id": "339",
+  "name": "Faro - Bom João",
+  "street": "Bom João 1",
+  "city": "Faro",
+  "zip": "8000-232",
+  "lat": 37.0137,
+  "lng": -7.9189
+ },
+ {
+  "id": "612",
+  "name": "Faro Abecassis",
+  "street": "Rua Eng. Nuno Abecassis",
+  "city": "Faro",
+  "zip": "8005-548",
+  "lat": 37.0289,
+  "lng": -7.94208
+ },
+ {
+  "id": "417",
+  "name": "Felgueiras",
+  "street": "Rua Professor Joaquim Barros Leite 1",
+  "city": "Felgueiras",
+  "zip": "4610-211",
+  "lat": 41.36147,
+  "lng": -8.19796
+ },
+ {
+  "id": "427",
+  "name": "Felgueiras - Lixa",
+  "street": "Travessa do Alto da Lixa 1",
+  "city": "Felgueiras",
+  "zip": "4615-013",
+  "lat": 41.31642,
+  "lng": -8.14121
+ },
+ {
+  "id": "235",
+  "name": "Figueira da Foz",
+  "street": "Avenida D. João II 1",
+  "city": "Figueira da Foz",
+  "zip": "3080-229",
+  "lat": 40.16699,
+  "lng": -8.88354
+ },
+ {
+  "id": "467",
+  "name": "Figueira da Foz - Billerud",
+  "street": "Rua Celulose Billerud 37",
+  "city": "Figueira da Foz",
+  "zip": "3080-030",
+  "lat": 40.15763,
+  "lng": -8.85009
+ },
+ {
+  "id": "437",
+  "name": "Fundão",
+  "street": "Vale de Canas 1",
+  "city": "Fundão",
+  "zip": "6230-001",
+  "lat": 40.15435,
+  "lng": -7.49754
+ },
+ {
+  "id": "288",
+  "name": "Barcelos Gamil",
+  "street": "Rua da Farmácia - Lugar de Pena",
+  "city": "Gamil",
+  "zip": "4755-225",
+  "lat": 41.52267,
+  "lng": -8.59289
+ },
+ {
+  "id": "494",
+  "name": "Gondomar - Rio Tinto",
+  "street": "Av. Dr. Domingos Gonçalves de Sá 381",
+  "city": "Gondomar",
+  "zip": "4435-123",
+  "lat": 41.17542,
+  "lng": -8.55683
+ },
+ {
+  "id": "451",
+  "name": "Gondomar - S. Cosme",
+  "street": "Rua Dr. Carlos Moura Guedes 50",
+  "city": "Gondomar",
+  "zip": "4420-230",
+  "lat": 41.13669,
+  "lng": -8.53639
+ },
+ {
+  "id": "443",
+  "name": "Gondomar Baguim do Monte",
+  "street": "Rua D. António Castro Meireles,  243",
+  "city": "Gondomar",
+  "zip": "4435-668",
+  "lat": 41.18255,
+  "lng": -8.53759
+ },
+ {
+  "id": "204",
+  "name": "Gondomar Dom Miguel",
+  "street": "Estrada D. Miguel 1576",
+  "city": "Gondomar",
+  "zip": "4510-243",
+  "lat": 41.15386,
+  "lng": -8.51647
+ },
+ {
+  "id": "407",
+  "name": "Gouveia",
+  "street": "Estrada Nacional 232 1",
+  "city": "Gouveia",
+  "zip": "6290-320",
+  "lat": 40.49455,
+  "lng": -7.60086
+ },
+ {
+  "id": "369",
+  "name": "Grândola",
+  "street": "Rua Dom Nuno Álvares Pereira 1",
+  "city": "Grândola",
+  "zip": "7520-239",
+  "lat": 38.20893,
+  "lng": -8.56596
+ },
+ {
+  "id": "634",
+  "name": "Grândola - Carvalhal",
+  "street": "EN261-1",
+  "city": "Grândola",
+  "zip": "7570-779",
+  "lat": 38.30901,
+  "lng": -8.7413
+ },
+ {
+  "id": "241",
+  "name": "Guarda",
+  "street": "Rua Vila de Manteigas 1",
+  "city": "Guarda",
+  "zip": "6300-617",
+  "lat": 40.54423,
+  "lng": -7.25876
+ },
+ {
+  "id": "575",
+  "name": "Guarda - Rio Diz",
+  "street": "Avenida Cardeal José Saraiva Martins 206",
+  "city": "Guarda",
+  "zip": "6300-855",
+  "lat": 40.55433,
+  "lng": -7.25048
+ },
+ {
+  "id": "523",
+  "name": "Guimarães - Fermentões",
+  "street": "Rua de Santa Eulália",
+  "city": "Guimarães",
+  "zip": "4800-098",
+  "lat": 41.46098,
+  "lng": -8.31345
+ },
+ {
+  "id": "432",
+  "name": "Guimarães - Mesão Frio",
+  "street": "Rua da Arcela 2064",
+  "city": "Guimarães",
+  "zip": "4810-553",
+  "lat": 41.45388,
+  "lng": -8.27634
+ },
+ {
+  "id": "428",
+  "name": "Guimarães - Pevidém",
+  "street": "Avenida Soc. Musical de Pevidém 1",
+  "city": "Guimarães",
+  "zip": "4835-297",
+  "lat": 41.42154,
+  "lng": -8.3551
+ },
+ {
+  "id": "558",
+  "name": "Guimarães- Silvares",
+  "street": "Rua 25 de Abril",
+  "city": "Guimarães",
+  "zip": "4835-408",
+  "lat": 41.44741,
+  "lng": -8.34426
+ },
+ {
+  "id": "479",
+  "name": "Lagoa - Parchal",
+  "street": "Rua Foz do Arade 5",
+  "city": "Lagoa",
+  "zip": "8400-330",
+  "lat": 37.1366,
+  "lng": -8.51962
+ },
+ {
+  "id": "353",
+  "name": "Lagos - Av. República",
+  "street": "Avenida da República 303",
+  "city": "Lagos",
+  "zip": "8600-643",
+  "lat": 37.10732,
+  "lng": -8.68214
+ },
+ {
+  "id": "269",
+  "name": "Lamego",
+  "street": "Ponte Nova A 1",
+  "city": "Lamego",
+  "zip": "5100-100",
+  "lat": 41.08121,
+  "lng": -7.79923
+ },
+ {
+  "id": "509",
+  "name": "Leiria - Guimarota",
+  "street": "Rua Vale de Lobos 64",
+  "city": "Leiria",
+  "zip": "2410-078",
+  "lat": 39.73159,
+  "lng": -8.79873
+ },
+ {
+  "id": "401",
+  "name": "Leiria - Marrazes",
+  "street": "Rua da Carreira de Tiro",
+  "city": "Leiria",
+  "zip": "2415-592",
+  "lat": 39.76257,
+  "lng": -8.81826
+ },
+ {
+  "id": "608",
+  "name": "Leiria - Rua Paulo VI",
+  "street": "Rua Paulo VI",
+  "city": "Leiria",
+  "zip": "2415-614",
+  "lat": 39.76315,
+  "lng": -8.78355
+ },
+ {
+  "id": "551",
+  "name": "Leiria 25Abril",
+  "street": "Avenida 25 Abril 15",
+  "city": "Leiria",
+  "zip": "2400-265",
+  "lat": 39.74698,
+  "lng": -8.81562
+ },
+ {
+  "id": "495",
+  "name": "Bairro Azul",
+  "street": "Av. Ressano Garcia 1 C/V",
+  "city": "Lisboa",
+  "zip": "1070-234",
+  "lat": 38.73444,
+  "lng": -9.15476
+ },
+ {
+  "id": "486",
+  "name": "Casal Ribeiro",
+  "street": "Avenida Casal Ribeiro 18 A - B",
+  "city": "Lisboa",
+  "zip": "1000-090",
+  "lat": 38.73236,
+  "lng": -9.14202
+ },
+ {
+  "id": "189",
+  "name": "Lisboa - Alvaláxia",
+  "street": "Rua Prof. Fernando da Fonseca Fração G",
+  "city": "Lisboa",
+  "zip": "1600-617",
+  "lat": 38.76077,
+  "lng": -9.15941
+ },
+ {
+  "id": "173",
+  "name": "Lisboa - Av. Infante D.Henrique",
+  "street": "Av. Infante D. Henrique, L.  17/18",
+  "city": "Lisboa",
+  "zip": "1800-217",
+  "lat": 38.75747,
+  "lng": -9.10347
+ },
+ {
+  "id": "190",
+  "name": "Lisboa - Av. Lusíada",
+  "street": "Rua Xavier Araujo 4",
+  "city": "Lisboa",
+  "zip": "1600-226",
+  "lat": 38.74953,
+  "lng": -9.17306
+ },
+ {
+  "id": "191",
+  "name": "Lisboa - Av. Visconde Valmor",
+  "street": "Av. Visconde Valmor 68",
+  "city": "Lisboa",
+  "zip": "1050-242",
+  "lat": 38.73767,
+  "lng": -9.15036
+ },
+ {
+  "id": "529",
+  "name": "Lisboa - Belenenses",
+  "street": "Avenida do Restelo 2A, 2B, 2C, 2D",
+  "city": "Lisboa",
+  "zip": "1400-314",
+  "lat": 38.70115,
+  "lng": -9.20797
+ },
+ {
+  "id": "148",
+  "name": "Lisboa - Cor.Galhardo",
+  "street": "Avenida Cor. e Galhardo 2",
+  "city": "Lisboa",
+  "zip": "1170-105",
+  "lat": 38.72776,
+  "lng": -9.12692
+ },
+ {
+  "id": "503",
+  "name": "Lisboa - Entrecampos",
+  "street": "Rua Cordeiro de Sousa Km 005,820 da Linha de Cintura",
+  "city": "Lisboa",
+  "zip": "1050-077",
+  "lat": 38.74457,
+  "lng": -9.14872
+ },
+ {
+  "id": "155",
+  "name": "Lisboa - J.Farinha",
+  "street": "Rua José Farinha 21",
+  "city": "Lisboa",
+  "zip": "1500-629",
+  "lat": 38.75995,
+  "lng": -9.19717
+ },
+ {
+  "id": "507",
+  "name": "Lisboa - Olivais Sul",
+  "street": "Rua Cidade de Bolama 20",
+  "city": "Lisboa",
+  "zip": "1800-079",
+  "lat": 38.76243,
+  "lng": -9.11678
+ },
+ {
+  "id": "645",
+  "name": "Lisboa - Parque das Nações",
+  "street": "Avenida Fernando Pessoa 12",
+  "city": "Lisboa",
+  "zip": "1990-105",
+  "lat": 38.75698,
+  "lng": -9.09854
+ },
+ {
+  "id": "441",
+  "name": "Lisboa - R. Leão de Oliveira",
+  "street": "Rua Leão de Oliveira 6",
+  "city": "Lisboa",
+  "zip": "1300-350",
+  "lat": 38.70507,
+  "lng": -9.17906
+ },
+ {
+  "id": "166",
+  "name": "Lisboa - Rio Janeiro",
+  "street": "Avenida Rio de Janeiro 26",
+  "city": "Lisboa",
+  "zip": "1700-330",
+  "lat": 38.75611,
+  "lng": -9.13998
+ },
+ {
+  "id": "180",
+  "name": "Lisboa - Rua Eng.º Paulo Barros",
+  "street": "Rua Engenheiro Paulo Barros 13",
+  "city": "Lisboa",
+  "zip": "1500-297",
+  "lat": 38.74601,
+  "lng": -9.20576
+ },
+ {
+  "id": "188",
+  "name": "Lisboa - Rua Maria da Fonte",
+  "street": "Mercado do Forno do Tijolo 37",
+  "city": "Lisboa",
+  "zip": "1170-221",
+  "lat": 38.72191,
+  "lng": -9.13229
+ },
+ {
+  "id": "498",
+  "name": "Lisboa - Sete Rios",
+  "street": "Av. Columbano Bordalo Pinheiro S/N",
+  "city": "Lisboa",
+  "zip": "1070-060",
+  "lat": 38.74031,
+  "lng": -9.16709
+ },
+ {
+  "id": "149",
+  "name": "Lisboa - Xabregas",
+  "street": "Rua Bispo de Cochim s/n",
+  "city": "Lisboa",
+  "zip": "1900-455",
+  "lat": 38.72431,
+  "lng": -9.11281
+ },
+ {
+  "id": "594",
+  "name": "Almancil",
+  "street": "Av. 5 de Outubro, Vale de Éguas",
+  "city": "Loulé",
+  "zip": "8135-016",
+  "lat": 37.09278,
+  "lng": -8.04094
+ },
+ {
+  "id": "492",
+  "name": "Boliqueime",
+  "street": "Av. Professor Doutor Aníbal Cavaco Silva 32",
+  "city": "Loulé",
+  "zip": "8100-070",
+  "lat": 37.12903,
+  "lng": -8.15168
+ },
+ {
+  "id": "344",
+  "name": "Loulé",
+  "street": "Sítio da Costa, Av. Andrade de Sousa 1",
+  "city": "Loulé",
+  "zip": "8100-728",
+  "lat": 37.13545,
+  "lng": -8.03089
+ },
+ {
+  "id": "447",
+  "name": "Loulé - Quarteira",
+  "street": "Avenida da Fonte Santa 2",
+  "city": "Loulé",
+  "zip": "8125-020",
+  "lat": 37.07366,
+  "lng": -8.07879
+ },
+ {
+  "id": "622",
+  "name": "Loulé Caliços",
+  "street": "Av. do Algarve - Caliços 1",
+  "city": "Loulé",
+  "zip": "8100-298",
+  "lat": 37.10142,
+  "lng": -8.00138
+ },
+ {
+  "id": "125",
+  "name": "Loures",
+  "street": "Rua Professor Dr. Egas Moniz 1",
+  "city": "Loures",
+  "zip": "2670-583",
+  "lat": 38.82667,
+  "lng": -9.16526
+ },
+ {
+  "id": "502",
+  "name": "Loures - IKEA",
+  "street": "Rua 28 de Setembro 250",
+  "city": "Loures",
+  "zip": "2660-001",
+  "lat": 38.81494,
+  "lng": -9.14842
+ },
+ {
+  "id": "435",
+  "name": "Loures - Moscavide",
+  "street": "Av. de Moscavide 2.01",
+  "city": "Loures",
+  "zip": "1885-075",
+  "lat": 38.78047,
+  "lng": -9.10405
+ },
+ {
+  "id": "127",
+  "name": "Loures - Portela",
+  "street": "Quinta da Vitória 2",
+  "city": "Loures",
+  "zip": "2685-244",
+  "lat": 38.78506,
+  "lng": -9.11669
+ },
+ {
+  "id": "546",
+  "name": "Loures - Santa Iria da Azóia",
+  "street": "Rua D. Pedro V S/N",
+  "city": "Loures",
+  "zip": "2690-189",
+  "lat": 38.83712,
+  "lng": -9.08373
+ },
+ {
+  "id": "472",
+  "name": "Sacavém - Qt.ª S. João das Areias",
+  "street": "R. Dr. Gilberto Lindim Ramos - Qta. S. João das Areia S/N",
+  "city": "Loures",
+  "zip": "2685-012",
+  "lat": 38.79602,
+  "lng": -9.11747
+ },
+ {
+  "id": "512",
+  "name": "Lourinhã",
+  "street": "Av. António José de Almeida 49",
+  "city": "Lourinhã",
+  "zip": "2530-113",
+  "lat": 39.25012,
+  "lng": -9.31316
+ },
+ {
+  "id": "273",
+  "name": "Lousada",
+  "street": "Rua António Gomes Ribeiro 123",
+  "city": "Lousada",
+  "zip": "4620-009",
+  "lat": 41.27097,
+  "lng": -8.28413
+ },
+ {
+  "id": "510",
+  "name": "Lousã",
+  "street": "Rua Quinta das Camélias 2",
+  "city": "Lousã",
+  "zip": "3200-222",
+  "lat": 40.11927,
+  "lng": -8.24966
+ },
+ {
+  "id": "291",
+  "name": "Macedo de Cavaleiros",
+  "street": "Rua Viriato Martins 1",
+  "city": "Macedo de Cavaleiros",
+  "zip": "5340-288",
+  "lat": 41.5442,
+  "lng": -6.95978
+ },
+ {
+  "id": "610",
+  "name": "Mafra",
+  "street": "R. do Almirante Gago Coutinho 3",
+  "city": "Mafra",
+  "zip": "2640-487",
+  "lat": 38.93224,
+  "lng": -9.32891
+ },
+ {
+  "id": "181",
+  "name": "Mafra - Ericeira",
+  "street": "Estrada Nacional 116 70",
+  "city": "Mafra",
+  "zip": "2655-139",
+  "lat": 38.96497,
+  "lng": -9.408
+ },
+ {
+  "id": "178",
+  "name": "Malveira",
+  "street": "Rua Casal das Queimadas 1",
+  "city": "Mafra",
+  "zip": "2665-258",
+  "lat": 38.93123,
+  "lng": -9.25191
+ },
+ {
+  "id": "611",
+  "name": "Maia - Brás Oleiro",
+  "street": "Rua Quinta da Palmeira",
+  "city": "Maia",
+  "zip": "4425-057",
+  "lat": 41.19786,
+  "lng": -8.57507
+ },
+ {
+  "id": "518",
+  "name": "Maia - Castêlo da Maia",
+  "street": "Rua de Augusto Nogueira da Silva 226",
+  "city": "Maia",
+  "zip": "4475-615",
+  "lat": 41.2607,
+  "lng": -8.6168
+ },
+ {
+  "id": "440",
+  "name": "Maia - Moreira",
+  "street": "Rua Eng. Frederico Ulrich 3456",
+  "city": "Maia",
+  "zip": "4470-605",
+  "lat": 41.2555,
+  "lng": -8.6513
+ },
+ {
+  "id": "255",
+  "name": "Maia - Nogueira",
+  "street": "Rua Nª Senhor da Hora 108",
+  "city": "Maia",
+  "zip": "4475-299",
+  "lat": 41.22919,
+  "lng": -8.58557
+ },
+ {
+  "id": "431",
+  "name": "Maia - Vermoim",
+  "street": "Rua Avelino Francisco Pereira 55",
+  "city": "Maia",
+  "zip": "4470-289",
+  "lat": 41.22625,
+  "lng": -8.61086
+ },
+ {
+  "id": "247",
+  "name": "Mangualde",
+  "street": "Rua dos Combatentes da Grande Guerra 1",
+  "city": "Mangualde",
+  "zip": "3530-261",
+  "lat": 40.60897,
+  "lng": -7.7623
+ },
+ {
+  "id": "550",
+  "name": "Marco de Canaveses",
+  "street": "Largo da Feira do Marco 329",
+  "city": "Marco de Canaveses",
+  "zip": "4630-215",
+  "lat": 41.18107,
+  "lng": -8.15407
+ },
+ {
+  "id": "115",
+  "name": "Marinha Grande",
+  "street": "Avenida 1º de Maio 211",
+  "city": "Marinha Grande",
+  "zip": "2430-211",
+  "lat": 39.74294,
+  "lng": -8.92816
+ },
+ {
+  "id": "588",
+  "name": "Vieira de Leiria",
+  "street": "Rua da Marinha Grande 4",
+  "city": "Marinha Grande",
+  "zip": "2430-722",
+  "lat": 39.86899,
+  "lng": -8.93967
+ },
+ {
+  "id": "613",
+  "name": "Matosinhos - Custóias",
+  "street": "Rua Cândido dos Reis",
+  "city": "Matosinhos",
+  "zip": "4460-886",
+  "lat": 41.20052,
+  "lng": -8.65064
+ },
+ {
+  "id": "277",
+  "name": "Matosinhos - Leça da Palmeira",
+  "street": "Rua da Bataria,  45",
+  "city": "Matosinhos",
+  "zip": "4450-800",
+  "lat": 41.20458,
+  "lng": -8.69674
+ },
+ {
+  "id": "207",
+  "name": "Matosinhos - Mt.Burgos",
+  "street": "Rua Eng. António Costa Reis 302",
+  "city": "Matosinhos",
+  "zip": "4460-235",
+  "lat": 41.18463,
+  "lng": -8.63199
+ },
+ {
+  "id": "619",
+  "name": "Matosinhos - Perafita",
+  "street": "Rua Silva Aroso",
+  "city": "Matosinhos",
+  "zip": "4455-558",
+  "lat": 41.2285,
+  "lng": -8.69767
+ },
+ {
+  "id": "453",
+  "name": "Matosinhos - Rua Roberto Ivens",
+  "street": "Rua Roberto Ivens 898",
+  "city": "Matosinhos",
+  "zip": "4450-250",
+  "lat": 41.17965,
+  "lng": -8.69074
+ },
+ {
+  "id": "457",
+  "name": "Matosinhos - S. Mamede de Infesta",
+  "street": "Rua Santos Dias  725",
+  "city": "Matosinhos",
+  "zip": "4465-255",
+  "lat": 41.19891,
+  "lng": -8.60964
+ },
+ {
+  "id": "228",
+  "name": "Matosinhos - S.Hora",
+  "street": "Avenida Ant. Domingues Santos 431-461",
+  "city": "Matosinhos",
+  "zip": "4460-237",
+  "lat": 41.1861,
+  "lng": -8.65947
+ },
+ {
+  "id": "292",
+  "name": "Mealhada",
+  "street": "Rua das Padeiras da Mealhada 1",
+  "city": "Mealhada",
+  "zip": "3050-323",
+  "lat": 40.37358,
+  "lng": -8.4493
+ },
+ {
+  "id": "648",
+  "name": "Mira",
+  "street": "Rua Dr. António José de Almeida 196",
+  "city": "Mira",
+  "zip": "3070-399",
+  "lat": 40.43151,
+  "lng": -8.73066
+ },
+ {
+  "id": "403",
+  "name": "Miranda do Corvo",
+  "street": "Rua 25 de Abril 1",
+  "city": "Miranda do Corvo",
+  "zip": "3220-185",
+  "lat": 40.09142,
+  "lng": -8.32619
+ },
+ {
+  "id": "285",
+  "name": "Mirandela",
+  "street": "Rua Joaquim Teófilo Braga 1",
+  "city": "Mirandela",
+  "zip": "5370-346",
+  "lat": 41.49415,
+  "lng": -7.18185
+ },
+ {
+  "id": "560",
+  "name": "Moita Quinta das Vagas",
+  "street": "Estrada Nacional 11 11",
+  "city": "Moita",
+  "zip": "2860-445",
+  "lat": 38.64848,
+  "lng": -8.99697
+ },
+ {
+  "id": "351",
+  "name": "Montemor-o-Novo",
+  "street": "Rua Curvo Semedo 1",
+  "city": "Montemor-o-Novo",
+  "zip": "7050-165",
+  "lat": 38.64779,
+  "lng": -8.22278
+ },
+ {
+  "id": "402",
+  "name": "Montemor-o-Velho",
+  "street": "Antiga EN 111 Km 17",
+  "city": "Montemor-o-Velho",
+  "zip": "3140-202",
+  "lat": 40.18411,
+  "lng": -8.67065
+ },
+ {
+  "id": "452",
+  "name": "Montijo - Afonsoeiro",
+  "street": "Alto das Vinhas Grandes 1",
+  "city": "Montijo",
+  "zip": "2870-438",
+  "lat": 38.70315,
+  "lng": -8.94522
+ },
+ {
+  "id": "574",
+  "name": "Montijo Olivença",
+  "street": "Avenida de Olivença 1",
+  "city": "Montijo",
+  "zip": "2870-108",
+  "lat": 38.71426,
+  "lng": -8.97249
+ },
+ {
+  "id": "477",
+  "name": "Monção - EN 101 - Monção",
+  "street": "EN 101 101",
+  "city": "Monção",
+  "zip": "4950-278",
+  "lat": 42.06708,
+  "lng": -8.4953
+ },
+ {
+  "id": "609",
+  "name": "Mértola",
+  "street": "Achada de São Sebastião 7",
+  "city": "Mértola",
+  "zip": "7750-295",
+  "lat": 37.64315,
+  "lng": -7.65596
+ },
+ {
+  "id": "413",
+  "name": "Nazaré",
+  "street": "Avenida Abílio Santos e Sousa 3",
+  "city": "Nazaré",
+  "zip": "2450-287",
+  "lat": 39.61181,
+  "lng": -9.06345
+ },
+ {
+  "id": "408",
+  "name": "Nelas",
+  "street": "Avenida Dr. Fortunato de Almeida 1",
+  "city": "Nelas",
+  "zip": "3520-056",
+  "lat": 40.47896,
+  "lng": -7.89297
+ },
+ {
+  "id": "346",
+  "name": "Odemira",
+  "street": "Portas do Transval 21",
+  "city": "Odemira",
+  "zip": "7630-208",
+  "lat": 37.59164,
+  "lng": -8.66727
+ },
+ {
+  "id": "159",
+  "name": "Odivelas - Arroja",
+  "street": "Avenida das Acássias 1",
+  "city": "Odivelas",
+  "zip": "2675-221",
+  "lat": 38.79617,
+  "lng": -9.197
+ },
+ {
+  "id": "141",
+  "name": "Odivelas - Caneças",
+  "street": "Estrada Montemor 16",
+  "city": "Odivelas",
+  "zip": "1675-483",
+  "lat": 38.81438,
+  "lng": -9.21508
+ },
+ {
+  "id": "511",
+  "name": "Odivelas - Rua Heróis de Chaimite",
+  "street": "Rua Heróis de Chaimite s/n",
+  "city": "Odivelas",
+  "zip": "2675-374",
+  "lat": 38.79404,
+  "lng": -9.16856
+ },
+ {
+  "id": "548",
+  "name": "Odivelas - Rua Soares dos Reis",
+  "street": "Rua Soares dos Reis 42",
+  "city": "Odivelas",
+  "zip": "2675-612",
+  "lat": 38.79823,
+  "lng": -9.1778
+ },
+ {
+  "id": "177",
+  "name": "Oeiras - Algés",
+  "street": "Rua João Chagas 130",
+  "city": "Oeiras",
+  "zip": "1495-070",
+  "lat": 38.70626,
+  "lng": -9.23838
+ },
+ {
+  "id": "527",
+  "name": "Oeiras - Linda-a-Velha",
+  "street": "Avenida 25 de Abril de 1974 21",
+  "city": "Oeiras",
+  "zip": "2795-195",
+  "lat": 38.71631,
+  "lng": -9.23909
+ },
+ {
+  "id": "526",
+  "name": "Oeiras - Porto Salvo",
+  "street": "Praça Sérgio Vieira de Mello 22",
+  "city": "Oeiras",
+  "zip": "2740-287",
+  "lat": 38.71546,
+  "lng": -9.30044
+ },
+ {
+  "id": "569",
+  "name": "Oeiras - Área de Serviço",
+  "street": "A5",
+  "city": "Oeiras",
+  "zip": "2780-000",
+  "lat": 38.71479,
+  "lng": -9.28614
+ },
+ {
+  "id": "338",
+  "name": "Olhão",
+  "street": "EN 125 1",
+  "city": "Olhão",
+  "zip": "8700-171",
+  "lat": 37.02956,
+  "lng": -7.85329
+ },
+ {
+  "id": "221",
+  "name": "Oliveira de Azeméis",
+  "street": "Rua Joaquim da Silva Landeau 299",
+  "city": "Oliveira de Azeméis",
+  "zip": "3720-917",
+  "lat": 40.85204,
+  "lng": -8.47789
+ },
+ {
+  "id": "410",
+  "name": "Oliveira do Bairro",
+  "street": "Nó de Oliveira do Bairro 1",
+  "city": "Oliveira do Bairro",
+  "zip": "3770-233",
+  "lat": 40.52208,
+  "lng": -8.50312
+ },
+ {
+  "id": "571",
+  "name": "Oliveira do Hospital",
+  "street": "Rua Dr. João Afonso Ferreira Dinis 1",
+  "city": "Oliveira do Hospital",
+  "zip": "3400-173",
+  "lat": 40.36181,
+  "lng": -7.85647
+ },
+ {
+  "id": "411",
+  "name": "Ourém",
+  "street": "Avenida D. Nuno Alvares Pereira 351",
+  "city": "Ourém",
+  "zip": "2490-483",
+  "lat": 39.6567,
+  "lng": -8.58385
+ },
+ {
+  "id": "572",
+  "name": "Ovar - Rua da Pardala",
+  "street": "Rua da Pardala 1",
+  "city": "Ovar",
+  "zip": "3880-112",
+  "lat": 40.88063,
+  "lng": -8.61795
+ },
+ {
+  "id": "323",
+  "name": "Palmela - EN 379",
+  "street": "Avenida Visconde de Tojal 9",
+  "city": "Palmela",
+  "zip": "2950-302",
+  "lat": 38.5775,
+  "lng": -8.89793
+ },
+ {
+  "id": "356",
+  "name": "Palmela - Pinhal Novo",
+  "street": "Villas do Terrim 1",
+  "city": "Palmela",
+  "zip": "2955-267",
+  "lat": 38.61911,
+  "lng": -8.91792
+ },
+ {
+  "id": "230",
+  "name": "Paredes",
+  "street": "R. D. M. Sotto Mayor Meneses 1",
+  "city": "Paredes",
+  "zip": "4580-146",
+  "lat": 41.19884,
+  "lng": -8.33376
+ },
+ {
+  "id": "262",
+  "name": "Paços de Ferreira",
+  "street": "Rua da Escola Secundária 1",
+  "city": "Paços de Ferreira",
+  "zip": "4590-892",
+  "lat": 41.2798,
+  "lng": -8.37567
+ },
+ {
+  "id": "412",
+  "name": "Penacova",
+  "street": "Rua das Escolas 1",
+  "city": "Penacova",
+  "zip": "3360-172",
+  "lat": 40.27247,
+  "lng": -8.28752
+ },
+ {
+  "id": "279",
+  "name": "Penafiel",
+  "street": "Rua da Quinta de Milhundos 60",
+  "city": "Penafiel",
+  "zip": "4560-237",
+  "lat": 41.21139,
+  "lng": -8.27157
+ },
+ {
+  "id": "138",
+  "name": "Peniche",
+  "street": "Rua Dr. Azeredo Perdigão 1",
+  "city": "Peniche",
+  "zip": "2520-626",
+  "lat": 39.3656,
+  "lng": -9.38067
+ },
+ {
+  "id": "422",
+  "name": "Peso da Régua",
+  "street": "Avenida Sacadura Cabral 1",
+  "city": "Peso da Régua",
+  "zip": "5050-071",
+  "lat": 41.16519,
+  "lng": -7.79819
+ },
+ {
+  "id": "222",
+  "name": "Pombal",
+  "street": "Rua de Ansião 1",
+  "city": "Pombal",
+  "zip": "3100-474",
+  "lat": 39.91645,
+  "lng": -8.62249
+ },
+ {
+  "id": "293",
+  "name": "Ponte de Lima",
+  "street": "Rua da Lebre 7",
+  "city": "Ponte de Lima",
+  "zip": "4990-374",
+  "lat": 41.77227,
+  "lng": -8.57504
+ },
+ {
+  "id": "163",
+  "name": "Ponte de Sôr",
+  "street": "Rua de Angola 2",
+  "city": "Ponte de Sor",
+  "zip": "7400-209",
+  "lat": 39.25803,
+  "lng": -8.01638
+ },
+ {
+  "id": "145",
+  "name": "Portalegre",
+  "street": "Rua Professor Ângelo Monteiro 1",
+  "city": "Portalegre",
+  "zip": "7300-041",
+  "lat": 39.28052,
+  "lng": -7.43075
+ },
+ {
+  "id": "330",
+  "name": "Portimão",
+  "street": "Barranco do Rodrigo - Portimão - V 7",
+  "city": "Portimão",
+  "zip": "8500-311",
+  "lat": 37.13429,
+  "lng": -8.5461
+ },
+ {
+  "id": "242",
+  "name": "Porto - Agramonte",
+  "street": "Rua Monsenhor Fonseca Soares 291-329",
+  "city": "Porto",
+  "zip": "4150-335",
+  "lat": 41.15769,
+  "lng": -8.63351
+ },
+ {
+  "id": "500",
+  "name": "Porto - Av Fernão de Magalhães",
+  "street": "Av Fernão de Magalhães 897-1009",
+  "city": "Porto",
+  "zip": "4350-167",
+  "lat": 41.1586,
+  "lng": -8.59369
+ },
+ {
+  "id": "423",
+  "name": "Porto - Av. Camilo",
+  "street": "Av. Camilo 26 / 32 / 50 / 56",
+  "city": "Porto",
+  "zip": "4300-095",
+  "lat": 41.14925,
+  "lng": -8.59398
+ },
+ {
+  "id": "579",
+  "name": "Porto - Joaquim Bastos",
+  "street": "Rua Joaquim Bastos 182 a 200",
+  "city": "Porto",
+  "zip": "4200-604",
+  "lat": 41.16947,
+  "lng": -8.61063
+ },
+ {
+  "id": "468",
+  "name": "Porto - Rua Diamantina",
+  "street": "Rua Diamantina 346",
+  "city": "Porto",
+  "zip": "4350-163",
+  "lat": 41.17971,
+  "lng": -8.581
+ },
+ {
+  "id": "482",
+  "name": "Porto - Rua Diogo Botelho/Rua da Pasteleira",
+  "street": "Rua Diogo Botelho/Rua da Pasteleira 440/161",
+  "city": "Porto",
+  "zip": "4150-586",
+  "lat": 41.15241,
+  "lng": -8.65276
+ },
+ {
+  "id": "549",
+  "name": "Porto AEP",
+  "street": "Estrada interior da Circunvalação 13941 a 13975",
+  "city": "Porto",
+  "zip": "4100-179",
+  "lat": 41.17715,
+  "lng": -8.65538
+ },
+ {
+  "id": "633",
+  "name": "Batalha Porto Mós",
+  "street": "Estrada da Calvaria 2",
+  "city": "Porto de Mós",
+  "zip": "2480-052",
+  "lat": 39.62895,
+  "lng": -8.85437
+ },
+ {
+  "id": "282",
+  "name": "Póvoa de Lanhoso",
+  "street": "Rua Pôça de Chidelas",
+  "city": "Póvoa de Lanhoso",
+  "zip": "4830-528",
+  "lat": 41.57499,
+  "lng": -8.27685
+ },
+ {
+  "id": "446",
+  "name": "Póvoa de Varzim",
+  "street": "Rua Engº Ezequiel Campos 38",
+  "city": "Póvoa de Varzim",
+  "zip": "4495-301",
+  "lat": 41.39534,
+  "lng": -8.76594
+ },
+ {
+  "id": "365",
+  "name": "Reguengos de Monsaraz",
+  "street": "Via do Grande Lago 25",
+  "city": "Reguengos de Monsaraz",
+  "zip": "7200-483",
+  "lat": 38.42371,
+  "lng": -7.5457
+ },
+ {
+  "id": "139",
+  "name": "Rio Maior",
+  "street": "Avenida Dr. Mário Soares 1",
+  "city": "Rio Maior",
+  "zip": "2040-211",
+  "lat": 39.33692,
+  "lng": -8.93061
+ },
+ {
+  "id": "157",
+  "name": "Salvaterra de Magos",
+  "street": "Estrada da Roseira Alta 1",
+  "city": "Salvaterra de Magos",
+  "zip": "2120-119",
+  "lat": 39.02216,
+  "lng": -8.79384
+ },
+ {
+  "id": "406",
+  "name": "Santa Comba Dão",
+  "street": "Rua de Santo Estevão 33",
+  "city": "Santa Comba Dão",
+  "zip": "3440-323",
+  "lat": 40.40389,
+  "lng": -8.13015
+ },
+ {
+  "id": "476",
+  "name": "Lourosa - Avenida Principal / EN1",
+  "street": "Avenida Principal 3729",
+  "city": "Santa Maria da Feira",
+  "zip": "4535-014",
+  "lat": 40.98005,
+  "lng": -8.53634
+ },
+ {
+  "id": "586",
+  "name": "Mozelos",
+  "street": "Rua de Meladas",
+  "city": "Santa Maria da Feira",
+  "zip": "4535-201",
+  "lat": 40.99378,
+  "lng": -8.57271
+ },
+ {
+  "id": "499",
+  "name": "Santa Maria da Feira",
+  "street": "Rua de Santo André 36",
+  "city": "Santa Maria da Feira",
+  "zip": "4520-272",
+  "lat": 40.9305,
+  "lng": -8.55205
+ },
+ {
+  "id": "168",
+  "name": "Santarém - Av. Bernardo Santareno",
+  "street": "Avenida Bernardo Santareno 8",
+  "city": "Santarém",
+  "zip": "2005-177",
+  "lat": 39.23934,
+  "lng": -8.69722
+ },
+ {
+  "id": "595",
+  "name": "Santarém - Av. Dr. Francisco Sá Carneiro",
+  "street": "Av. Dr. Francisco Sá Carneiro",
+  "city": "Santarém",
+  "zip": "2005-273",
+  "lat": 39.24892,
+  "lng": -8.6944
+ },
+ {
+  "id": "371",
+  "name": "Santiago Cacém - Santo André",
+  "street": "Rua do Mercado 1",
+  "city": "Santiago do Cacém",
+  "zip": "7500-220",
+  "lat": 38.05748,
+  "lng": -8.78755
+ },
+ {
+  "id": "535",
+  "name": "Santo Tirso - Vila das Aves",
+  "street": "Calçada da Azenha do Pisco 105",
+  "city": "Santo Tirso",
+  "zip": "4795-007",
+  "lat": 41.36307,
+  "lng": -8.39629
+ },
+ {
+  "id": "214",
+  "name": "Sto. Tirso - R. Jornal de S. Tirso",
+  "street": "Rua Jornal de Santo Tirso 28",
+  "city": "Santo Tirso",
+  "zip": "4780-563",
+  "lat": 41.34661,
+  "lng": -8.4822
+ },
+ {
+  "id": "515",
+  "name": "Seia",
+  "street": "Avenida Terras de Sena 121",
+  "city": "Seia",
+  "zip": "6270-485",
+  "lat": 40.43047,
+  "lng": -7.71742
+ },
+ {
+  "id": "458",
+  "name": "Seixal",
+  "street": "Avenida Albano Narciso Pereira",
+  "city": "Seixal",
+  "zip": "2844-001",
+  "lat": 38.64057,
+  "lng": -9.10062
+ },
+ {
+  "id": "326",
+  "name": "Seixal - Amora",
+  "street": "Avenida Baia Natural do Seixal",
+  "city": "Seixal",
+  "zip": "2845-608",
+  "lat": 38.6306,
+  "lng": -9.11898
+ },
+ {
+  "id": "455",
+  "name": "Seixal - Belverde",
+  "street": "Avenida do Mar 1",
+  "city": "Seixal",
+  "zip": "2845-484",
+  "lat": 38.59756,
+  "lng": -9.14143
+ },
+ {
+  "id": "436",
+  "name": "Seixal - Corroios",
+  "street": "Avenida Vieira da Silva 307",
+  "city": "Seixal",
+  "zip": "2855-578",
+  "lat": 38.63324,
+  "lng": -9.15072
+ },
+ {
+  "id": "497",
+  "name": "Seixal - Fernão Ferro",
+  "street": "Av. 10 de Junho 1",
+  "city": "Seixal",
+  "zip": "2865-600",
+  "lat": 38.55571,
+  "lng": -9.08775
+ },
+ {
+  "id": "461",
+  "name": "Seixal - Fogueteiro",
+  "street": "Av. dos Resistentes Antifascistas  60",
+  "city": "Seixal",
+  "zip": "2845-147",
+  "lat": 38.61505,
+  "lng": -9.10883
+ },
+ {
+  "id": "362",
+  "name": "Seixal - Miratejo",
+  "street": "Rua Ferreira de Castro 10A",
+  "city": "Seixal",
+  "zip": "2855-238",
+  "lat": 38.64974,
+  "lng": -9.14275
+ },
+ {
+  "id": "536",
+  "name": "Serpa",
+  "street": "Circular interna de Serpa 1",
+  "city": "Serpa",
+  "zip": "7830-392",
+  "lat": 37.94274,
+  "lng": -7.60591
+ },
+ {
+  "id": "651",
+  "name": "Sertã",
+  "street": "Rua dos Malmequeres",
+  "city": "Sertã",
+  "zip": "6100-601",
+  "lat": 39.79841,
+  "lng": -8.09403
+ },
+ {
+  "id": "336",
+  "name": "Sesimbra - Av. João Paulo II",
+  "street": "Estrada Nacional 378 Lote 3",
+  "city": "Sesimbra",
+  "zip": "2970-866",
+  "lat": 38.48477,
+  "lng": -9.10409
+ },
+ {
+  "id": "373",
+  "name": "Sesimbra - Qta. do Conde",
+  "street": "Avenida Cova dos Vidros 84",
+  "city": "Sesimbra",
+  "zip": "2975-312",
+  "lat": 38.56619,
+  "lng": -9.038
+ },
+ {
+  "id": "364",
+  "name": "Setúbal - Azeitão",
+  "street": "Rua José da Silva Xavier 41",
+  "city": "Setúbal",
+  "zip": "2925-547",
+  "lat": 38.52299,
+  "lng": -9.01775
+ },
+ {
+  "id": "370",
+  "name": "Setúbal - Estr. de Algeruz",
+  "street": "Estrada de Algeruz 1",
+  "city": "Setúbal",
+  "zip": "2910-279",
+  "lat": 38.53929,
+  "lng": -8.86574
+ },
+ {
+  "id": "342",
+  "name": "Setúbal - S. Sebastião",
+  "street": "Avenida da Bela Vista 38",
+  "city": "Setúbal",
+  "zip": "2910-421",
+  "lat": 38.52168,
+  "lng": -8.87282
+ },
+ {
+  "id": "516",
+  "name": "Setúbal - São Julião",
+  "street": "Avenida de Moçambique 4B",
+  "city": "Setúbal",
+  "zip": "2900-082",
+  "lat": 38.53899,
+  "lng": -8.89039
+ },
+ {
+  "id": "281",
+  "name": "Sever do Vouga",
+  "street": "Rua da APCDI 1",
+  "city": "Sever do Vouga",
+  "zip": "3740-115",
+  "lat": 40.72159,
+  "lng": -8.36125
+ },
+ {
+  "id": "541",
+  "name": "Armação de Pêra",
+  "street": "Avenida General Humberto Delgado 2",
+  "city": "Silves",
+  "zip": "8365-138",
+  "lat": 37.10399,
+  "lng": -8.36293
+ },
+ {
+  "id": "463",
+  "name": "Silves - Rua Cruz da Palmeira",
+  "street": "Rua Cruz da Palmeira",
+  "city": "Silves",
+  "zip": "8300-010",
+  "lat": 37.18637,
+  "lng": -8.44017
+ },
+ {
+  "id": "639",
+  "name": "Sines",
+  "street": "Rua Estevão da Gama",
+  "city": "Sines",
+  "zip": "7520-137",
+  "lat": 37.96496,
+  "lng": -8.86023
+ },
+ {
+  "id": "543",
+  "name": "Rio de Mouro",
+  "street": "Avenida Major General Machado de Sousa 1",
+  "city": "Sintra",
+  "zip": "2635-445",
+  "lat": 38.78303,
+  "lng": -9.33684
+ },
+ {
+  "id": "185",
+  "name": "Sintra - Agualva",
+  "street": "Rua António Antunes Martins de Oliveira 1",
+  "city": "Sintra",
+  "zip": "2735-535",
+  "lat": 38.77085,
+  "lng": -9.28795
+ },
+ {
+  "id": "179",
+  "name": "Sintra - Algueirão",
+  "street": "Casal Vale Milho 1",
+  "city": "Sintra",
+  "zip": "2725-041",
+  "lat": 38.80443,
+  "lng": -9.3561
+ },
+ {
+  "id": "618",
+  "name": "Sintra - Cacém",
+  "street": "Rua da Bela vista 31",
+  "city": "Sintra",
+  "zip": "2735-184",
+  "lat": 38.76285,
+  "lng": -9.30513
+ },
+ {
+  "id": "483",
+  "name": "Sintra - Casal de Cambra",
+  "street": "Av. de Lisboa S/N",
+  "city": "Sintra",
+  "zip": "2605-004",
+  "lat": 38.79704,
+  "lng": -9.22932
+ },
+ {
+  "id": "471",
+  "name": "Sintra - Linhó",
+  "street": "Avenida Pedro Álvares Cabral",
+  "city": "Sintra",
+  "zip": "2710-297",
+  "lat": 38.75906,
+  "lng": -9.3783
+ },
+ {
+  "id": "596",
+  "name": "Sintra - Lourel",
+  "street": "Estrada de Mafra 109",
+  "city": "Sintra",
+  "zip": "2710-375",
+  "lat": 38.81735,
+  "lng": -9.36153
+ },
+ {
+  "id": "434",
+  "name": "Sintra - Mercado Rio Mouro",
+  "street": "Avenida Gil Eanes 1",
+  "city": "Sintra",
+  "zip": "2635-003",
+  "lat": 38.78043,
+  "lng": -9.3222
+ },
+ {
+  "id": "445",
+  "name": "Sintra - Pêro Pinheiro",
+  "street": "Av. da Liberdade 151",
+  "city": "Sintra",
+  "zip": "2715-004",
+  "lat": 38.86114,
+  "lng": -9.32697
+ },
+ {
+  "id": "129",
+  "name": "Sintra - Tapada das Mercês",
+  "street": "Rua da Chamuscada 6",
+  "city": "Sintra",
+  "zip": "2725-093",
+  "lat": 38.80067,
+  "lng": -9.32506
+ },
+ {
+  "id": "186",
+  "name": "Sintra - Terrugem",
+  "street": "Av. 29 de Agosto 80",
+  "city": "Sintra",
+  "zip": "2705-866",
+  "lat": 38.84433,
+  "lng": -9.37608
+ },
+ {
+  "id": "539",
+  "name": "Sintra-Massamá Norte",
+  "street": "Rua D. Inês de Castro Lote 177",
+  "city": "Sintra",
+  "zip": "2605-246",
+  "lat": 38.76201,
+  "lng": -9.28076
+ },
+ {
+  "id": "562",
+  "name": "Sintra-Mem Martins",
+  "street": "EN 249 249",
+  "city": "Sintra",
+  "zip": "2725-397",
+  "lat": 38.77975,
+  "lng": -9.34848
+ },
+ {
+  "id": "430",
+  "name": "Soure",
+  "street": "Av. Dr. João Esteves Simões 1",
+  "city": "Soure",
+  "zip": "3130-201",
+  "lat": 40.06429,
+  "lng": -8.61973
+ },
+ {
+  "id": "358",
+  "name": "Sao Brás de Alportel",
+  "street": "EN2 - Calçada 2",
+  "city": "São Brás de Alportel",
+  "zip": "8150-034",
+  "lat": 37.1496,
+  "lng": -7.89355
+ },
+ {
+  "id": "576",
+  "name": "São João Madeira - Oliveira Junior",
+  "street": "Rua António José de Oliveira Júnior 680",
+  "city": "São João da Madeira",
+  "zip": "3700-206",
+  "lat": 40.90507,
+  "lng": -8.49475
+ },
+ {
+  "id": "418",
+  "name": "São João da Madeira",
+  "street": "Avenida Doutor Renato Araújo 865",
+  "city": "São João da Madeira",
+  "zip": "3700-008",
+  "lat": 40.8842,
+  "lng": -8.48885
+ },
+ {
+  "id": "290",
+  "name": "Sao Pedro do Sul",
+  "street": "Avenida Dr. Pinho Bandeira 25",
+  "city": "São Pedro do Sul",
+  "zip": "3660-511",
+  "lat": 40.76079,
+  "lng": -8.06069
+ },
+ {
+  "id": "341",
+  "name": "Tavira",
+  "street": "Largo Santo António Amaro 1",
+  "city": "Tavira",
+  "zip": "8800-703",
+  "lat": 37.11984,
+  "lng": -7.65548
+ },
+ {
+  "id": "480",
+  "name": "Tomar",
+  "street": "Rua de Coimbra 1",
+  "city": "Tomar",
+  "zip": "2300-471",
+  "lat": 39.61007,
+  "lng": -8.40168
+ },
+ {
+  "id": "258",
+  "name": "Tondela",
+  "street": "Rua Maestro Joaquim Ribeiro Azevedo 199",
+  "city": "Tondela",
+  "zip": "3460-604",
+  "lat": 40.50576,
+  "lng": -8.08028
+ },
+ {
+  "id": "113",
+  "name": "Torres Novas",
+  "street": "Rua da Várzea 56",
+  "city": "Torres Novas",
+  "zip": "2350-433",
+  "lat": 39.47129,
+  "lng": -8.53431
+ },
+ {
+  "id": "590",
+  "name": "Silveira",
+  "street": "Rua Inácio Nunes da Costa s/n",
+  "city": "Torres Vedras",
+  "zip": "2560-546",
+  "lat": 39.114,
+  "lng": -9.36765
+ },
+ {
+  "id": "123",
+  "name": "Torres Vedras",
+  "street": "Rua António Augusto Cabral  23",
+  "city": "Torres Vedras",
+  "zip": "2560-307",
+  "lat": 39.08247,
+  "lng": -9.26212
+ },
+ {
+  "id": "624",
+  "name": "Trofa-Rua das Indústrias",
+  "street": "Rua das Indústrias 179",
+  "city": "Trofa",
+  "zip": "4785-624",
+  "lat": 41.3314,
+  "lng": -8.56347
+ },
+ {
+  "id": "404",
+  "name": "Tábua",
+  "street": "Rua do Estádio Municipal 7",
+  "city": "Tábua",
+  "zip": "3420-328",
+  "lat": 40.36461,
+  "lng": -8.02488
+ },
+ {
+  "id": "484",
+  "name": "Vagos",
+  "street": "Rua Grémio da Lavoura 80",
+  "city": "Vagos",
+  "zip": "3840-485",
+  "lat": 40.54721,
+  "lng": -8.6778
+ },
+ {
+  "id": "599",
+  "name": "Vale de Cambra",
+  "street": "Avenida Doutor António Fonseca 1990",
+  "city": "Vale de Cambra",
+  "zip": "3730-239",
+  "lat": 40.84763,
+  "lng": -8.39131
+ },
+ {
+  "id": "263",
+  "name": "Valença",
+  "street": "Avenida Dr. Tito Fontes 1",
+  "city": "Valença",
+  "zip": "4930-676",
+  "lat": 42.02708,
+  "lng": -8.63748
+ },
+ {
+  "id": "554",
+  "name": "Valongo - Ermesinde",
+  "street": "Rua Professor Joaquim Teixeira 41",
+  "city": "Valongo",
+  "zip": "4445-288",
+  "lat": 41.21293,
+  "lng": -8.55047
+ },
+ {
+  "id": "553",
+  "name": "Valongo - Fonseca Dias",
+  "street": "Rua Fonseca Dias 584",
+  "city": "Valongo",
+  "zip": "4440-652",
+  "lat": 41.1835,
+  "lng": -8.48478
+ },
+ {
+  "id": "559",
+  "name": "Valongo – Alfena",
+  "street": "Rua 1º de Maio 1443 e 1461",
+  "city": "Valongo",
+  "zip": "4445-245",
+  "lat": 41.23994,
+  "lng": -8.52927
+ },
+ {
+  "id": "361",
+  "name": "Vendas Novas",
+  "street": "Rua do Polígono 25",
+  "city": "Vendas Novas",
+  "zip": "7080-116",
+  "lat": 38.67598,
+  "lng": -8.45085
+ },
+ {
+  "id": "487",
+  "name": "Viana do Castelo - Darque",
+  "street": "Rua Arriscado de Queirós 100",
+  "city": "Viana do Castelo",
+  "zip": "4935-208",
+  "lat": 41.68134,
+  "lng": -8.77511
+ },
+ {
+  "id": "470",
+  "name": "Viana do Castelo - Eça de Queirós",
+  "street": "Rua Eça de Queirós 111",
+  "city": "Viana do Castelo",
+  "zip": "4900-432",
+  "lat": 41.70635,
+  "lng": -8.81966
+ },
+ {
+  "id": "442",
+  "name": "Vidigueira",
+  "street": "EN 258 - zona Industrial 1",
+  "city": "Vidigueira",
+  "zip": "7960-305",
+  "lat": 38.205,
+  "lng": -7.80088
+ },
+ {
+  "id": "295",
+  "name": "Vieira do Minho",
+  "street": "Avenida João da Torre 1",
+  "city": "Vieira do Minho",
+  "zip": "4850-523",
+  "lat": 41.63678,
+  "lng": -8.14259
+ },
+ {
+  "id": "642",
+  "name": "Alverca Norte",
+  "street": "Avenida Cidade de Alverca 108",
+  "city": "Vila Franca de Xira",
+  "zip": "2615-141",
+  "lat": 38.90386,
+  "lng": -9.0342
+ },
+ {
+  "id": "525",
+  "name": "V.F.Xira - EN 1",
+  "street": "Caminho Municipal 1237 2",
+  "city": "Vila Franca de Xira",
+  "zip": "2600-208",
+  "lat": 38.97626,
+  "lng": -8.97901
+ },
+ {
+  "id": "142",
+  "name": "V.F.Xira - Póvoa Sta Iria",
+  "street": "EN 10 KM 13,7",
+  "city": "Vila Franca de Xira",
+  "zip": "2625-266",
+  "lat": 38.85207,
+  "lng": -9.0742
+ },
+ {
+  "id": "544",
+  "name": "Vila Franca de Xira - Vialonga",
+  "street": "Rua Professor Egas Moniz 1",
+  "city": "Vila Franca de Xira",
+  "zip": "2625-657",
+  "lat": 38.87066,
+  "lng": -9.08539
+ },
+ {
+  "id": "244",
+  "name": "Famalicão - G.Delgado",
+  "street": "Avenida Marechal Humberto Delgado 21",
+  "city": "Vila Nova de Famalicão",
+  "zip": "4760-010",
+  "lat": 41.40163,
+  "lng": -8.51656
+ },
+ {
+  "id": "429",
+  "name": "Famalicão - Ribeirão",
+  "street": "Av. Portas do Minho 344",
+  "city": "Vila Nova de Famalicão",
+  "zip": "4760-706",
+  "lat": 41.35353,
+  "lng": -8.55284
+ },
+ {
+  "id": "563",
+  "name": "Famalicão Av. Eng. Pinheiro Braga",
+  "street": "Avenida Engenheiro Pinheiro Braga",
+  "city": "Vila Nova de Famalicão",
+  "zip": "4764-501",
+  "lat": 41.41559,
+  "lng": -8.51832
+ },
+ {
+  "id": "505",
+  "name": "Vila Nova de Famalicão - Pousada de Saramagos",
+  "street": "Avenida São Martinho 57",
+  "city": "Vila Nova de Famalicão",
+  "zip": "4770-409",
+  "lat": 41.42565,
+  "lng": -8.43409
+ },
+ {
+  "id": "421",
+  "name": "V.N. Gaia - Avintes",
+  "street": "EN 222 KM 5,9",
+  "city": "Vila Nova de Gaia",
+  "zip": "4430-904",
+  "lat": 41.0942,
+  "lng": -8.55126
+ },
+ {
+  "id": "426",
+  "name": "V.N. Gaia - Canidelo",
+  "street": "Rua Nova de Alvites 231",
+  "city": "Vila Nova de Gaia",
+  "zip": "4400-514",
+  "lat": 41.1278,
+  "lng": -8.65126
+ },
+ {
+  "id": "419",
+  "name": "V.N. Gaia - Mafamude",
+  "street": "Rua 25 Abril",
+  "city": "Vila Nova de Gaia",
+  "zip": "4430-051",
+  "lat": 41.12657,
+  "lng": -8.60059
+ },
+ {
+  "id": "256",
+  "name": "V.N. Gaia - Pedroso",
+  "street": "Largo das Alminhas das Barrancas",
+  "city": "Vila Nova de Gaia",
+  "zip": "4415-343",
+  "lat": 41.04642,
+  "lng": -8.56375
+ },
+ {
+  "id": "250",
+  "name": "V.N. Gaia - S. Félix da Marinha",
+  "street": "Rua dos Loureiros 35",
+  "city": "Vila Nova de Gaia",
+  "zip": "4410-150",
+  "lat": 41.03104,
+  "lng": -8.64083
+ },
+ {
+  "id": "227",
+  "name": "V.N. Gaia - S.Marinha",
+  "street": "Avenida dos Descobrimentos 66",
+  "city": "Vila Nova de Gaia",
+  "zip": "4400-161",
+  "lat": 41.11976,
+  "lng": -8.62635
+ },
+ {
+  "id": "274",
+  "name": "V.N.Gaia - Gulpilhares",
+  "street": "Rua Salvador Brandão,  1316",
+  "city": "Vila Nova de Gaia",
+  "zip": "4405-702",
+  "lat": 41.07165,
+  "lng": -8.62603
+ },
+ {
+  "id": "504",
+  "name": "Vila Nova de Gaia - Centro",
+  "street": "Rua de Alvares Cabral 1",
+  "city": "Vila Nova de Gaia",
+  "zip": "4400-017",
+  "lat": 41.12848,
+  "lng": -8.60911
+ },
+ {
+  "id": "533",
+  "name": "Vila Nova de Gaia - Monte da Virgem",
+  "street": "Rua de Conceição Fernandes 1339",
+  "city": "Vila Nova de Gaia",
+  "zip": "4430-066",
+  "lat": 41.10824,
+  "lng": -8.59385
+ },
+ {
+  "id": "489",
+  "name": "Vila Real - Avenida da Universidade",
+  "street": "Avenida da Universidade 6",
+  "city": "Vila Real",
+  "zip": "5000-693",
+  "lat": 41.29297,
+  "lng": -7.73563
+ },
+ {
+  "id": "345",
+  "name": "Vila Real de Santo António",
+  "street": "Rua das Comunidades Portuguesas 332",
+  "city": "Vila Real de Santo António",
+  "zip": "8900-228",
+  "lat": 37.1919,
+  "lng": -7.42501
+ },
+ {
+  "id": "475",
+  "name": "Vila Verde - Rua dos Bombeiros",
+  "street": "Rua dos Bombeiros 165",
+  "city": "Vila Verde",
+  "zip": "4730-752",
+  "lat": 41.64708,
+  "lng": -8.43854
+ },
+ {
+  "id": "363",
+  "name": "Vila Viçosa",
+  "street": "Rua Duque D. Jaime 1",
+  "city": "Vila Viçosa",
+  "zip": "7160-251",
+  "lat": 38.78579,
+  "lng": -7.42332
+ },
+ {
+  "id": "372",
+  "name": "Vila do Bispo",
+  "street": "EN 268 1",
+  "city": "Vila do Bispo",
+  "zip": "8650-428",
+  "lat": 37.07979,
+  "lng": -8.91391
+ },
+ {
+  "id": "249",
+  "name": "Vila do Conde",
+  "street": "Gaveto da EN13 com EN206 206",
+  "city": "Vila do Conde",
+  "zip": "4480-739",
+  "lat": 41.36818,
+  "lng": -8.74955
+ },
+ {
+  "id": "556",
+  "name": "Vila do Conde - Av. Júlio Graça",
+  "street": "Avenida Júlio Graça 277",
+  "city": "Vila do Conde",
+  "zip": "4480-672",
+  "lat": 41.3483,
+  "lng": -8.74712
+ },
+ {
+  "id": "564",
+  "name": "Vila do Conde-Mindelo",
+  "street": "Rua Nova da Gândara 2",
+  "city": "Vila do Conde",
+  "zip": "4485-613",
+  "lat": 41.30536,
+  "lng": -8.70203
+ },
+ {
+  "id": "565",
+  "name": "Viseu - Estrada do Satão",
+  "street": "Avenida Professor Reinaldo Cardoso",
+  "city": "Viseu",
+  "zip": "3500-188",
+  "lat": 40.66364,
+  "lng": -7.89859
+ },
+ {
+  "id": "201",
+  "name": "Viseu - Pascoal",
+  "street": "Avenida do Alto de Abraveses 1",
+  "city": "Viseu",
+  "zip": "3515-828",
+  "lat": 40.6924,
+  "lng": -7.92933
+ },
+ {
+  "id": "514",
+  "name": "Viseu - Repeses",
+  "street": "Rua da APPACDM 1",
+  "city": "Viseu",
+  "zip": "3500-001",
+  "lat": 40.63776,
+  "lng": -7.93165
+ },
+ {
+  "id": "297",
+  "name": "Vizela",
+  "street": "Rua Guilherme Caldas Peixoto 1",
+  "city": "Vizela",
+  "zip": "4815-433",
+  "lat": 41.37176,
+  "lng": -8.31191
+ },
+ {
+  "id": "637",
+  "name": "Águeda",
+  "street": "Avenida 25 de Abril 480",
+  "city": "Águeda",
+  "zip": "3750-101",
+  "lat": 40.57246,
+  "lng": -8.44072
+ },
+ {
+  "id": "557",
+  "name": "Lidl Évora",
+  "street": "Rua Horta das Figueiras",
+  "city": "Évora",
+  "zip": "7005-212",
+  "lat": 38.56188,
+  "lng": -7.91333
+ }
+]
