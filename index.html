@@ -193,30 +193,45 @@ async function lookup(id){
   return {};
 }
 
-async function fetchLiveStock(id){
+// stock de um número de artigo (ID + 001/002/…) nas lojas todas
+async function storeStock(erp){
+  const ids = state.stores.map(s => s.id).join(",");
+  const r = await fetch(`${LIDL}/p/api/storestock/PT/pt/${erp}?storeids=${ids}`);
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  return Object.fromEntries((await r.json()).map(x => [x.storeId, x.storeAvailabilityIndicator]));
+}
+
+const RANK_STOCK = {AVAILABLE: 4, LOW_STOCK: 3, SOLD_OUT: 2, UNKNOWN: 1};
+async function fetchLiveStock(p){
   try {
-    const ids = state.stores.map(s => s.id).join(",");
-    const r = await fetch(`${LIDL}/p/api/storestock/PT/pt/${id}001?storeids=${ids}`);
-    if (!r.ok) throw new Error("HTTP " + r.status);
-    state.stock[id] = Object.fromEntries((await r.json()).map(x => [x.storeId, x.storeAvailabilityIndicator]));
+    if (p.erp) { state.stock[p.id] = await storeStock(p.erp); return; }
+    // produto fora da pesquisa: o sufixo da variante é desconhecido (a página do produto
+    // não permite CORS), por isso testam-se 001–004 e junta-se o melhor estado por loja
+    const all = await Promise.all(["001", "002", "003", "004"].map(s => storeStock(p.id + s).catch(() => ({}))));
+    const merged = {};
+    for (const st of all) for (const [sid, v] of Object.entries(st))
+      if ((RANK_STOCK[v] || 0) > (RANK_STOCK[merged[sid]] || 0)) merged[sid] = v;
+    state.stock[p.id] = merged;
   } catch (e) {
-    state.stock[id] = {error: e.message};
+    state.stock[p.id] = {error: e.message};
   }
 }
 
+const baseId = p => p.productId || p.id;   // produtos com várias variantes têm uma entrada por variante
+
 function mergeWatch(){
-  const byId = new Map(state.base.map(p => [p.id, {...p, watched: false}]));
+  const list = state.base.map(p => ({...p, watched: false}));
   for (const w of state.watch){
-    const p = byId.get(w.id);
-    if (p) p.watched = true;
-    else byId.set(w.id, {id: w.id, title: w.title, url: w.url, kind: classify(w.title), watched: true,
-                         badge: "Fora da pesquisa do site · consulta ao vivo"});
+    const matches = list.filter(p => baseId(p) === w.id);
+    if (matches.length) matches.forEach(p => p.watched = true);
+    else list.push({id: w.id, title: w.title, url: w.url, kind: classify(w.title), watched: true,
+                    badge: "Fora da pesquisa do site · consulta ao vivo"});
   }
-  state.products = [...byId.values()];
+  state.products = list;
 }
 
 async function refreshWatched(){
-  await Promise.all(state.watch.map(w => fetchLiveStock(w.id)));
+  await Promise.all(state.products.filter(p => p.watched).map(fetchLiveStock));
   render();
 }
 
@@ -229,9 +244,10 @@ async function addWatch(raw){
   const title = found.title || titleFromUrl(url) || `Produto ${id}`;
   state.watch.push({id, title, url});
   save("watch", state.watch);
-  state.selected.add(id); save("sel", [...state.selected]);
   mergeWatch();
-  await fetchLiveStock(id);
+  const added = state.products.filter(p => baseId(p) === id);
+  added.forEach(p => state.selected.add(p.id)); save("sel", [...state.selected]);
+  await Promise.all(added.map(fetchLiveStock));
   render();
 }
 
@@ -307,7 +323,7 @@ function renderProducts(){
         <div class="b">${esc(p.badge)}</div>
         <div class="counts">${cs}</div>
       </div>
-      ${p.watched ? `<button class="x" data-unwatch="${p.id}" title="Deixar de vigiar">✕ vigiado</button>` : ""}
+      ${p.watched ? `<button class="x" data-unwatch="${baseId(p)}" title="Deixar de vigiar">✕ vigiado</button>` : ""}
     </div>`;
   }).join("");
 }

@@ -157,28 +157,92 @@ def search(q):
     return cached(f"search:{q}", SEARCH_TTL, run)
 
 
+# ---------- variantes ----------
+# O stock é por variante (número de artigo de 11 dígitos: ID + 001, 002, …), e o sufixo
+# não é sempre 001. A pesquisa não o indica; a página do produto sim, no payload Nuxt.
+
+def _nuxt_payload(html):
+    m = re.search(r'<script[^>]*id="__NUXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
+    raw = json.loads(m.group(1))
+    memo = {}
+
+    def un(i):  # formato "devalue": listas/objectos referenciam índices do array
+        if not isinstance(i, int) or i < 0:
+            return None
+        if i in memo:
+            return memo[i]
+        v = raw[i]
+        if isinstance(v, list):
+            if v and isinstance(v[0], str) and v[0] in ("Reactive", "ShallowReactive", "Ref", "ShallowRef"):
+                memo[i] = un(v[1]) if len(v) > 1 else None
+                return memo[i]
+            r = memo[i] = []
+            r.extend(un(x) for x in v)
+            return r
+        if isinstance(v, dict):
+            r = memo[i] = {}
+            for k, x in v.items():
+                r[k] = un(x)
+            return r
+        return v
+    return un(0)
+
+
+def variants(p):
+    """[(número de artigo, nome da variante ou None)]; na dúvida assume-se ID+001."""
+    def run():
+        try:
+            req = urllib.request.Request(p["url"], headers=UA)
+            with urllib.request.urlopen(req, timeout=30) as r:
+                html = r.read().decode("utf-8", "replace")
+            attrs = (_nuxt_payload(html)["data"].get(f"&erp{p['id']}") or {}).get("attributes") or {}
+            labels = {o["key"]: o["value"] for a in attrs.get("attributes") or [] for o in a.get("options") or []}
+            out = []
+            for key, v in (attrs.get("attributesFlattened") or {}).items():
+                names = [lab for k, lab in labels.items() if k in key] or [key.split("|")[-1]]
+                for erp in v.get("erpNumbers") or []:
+                    out.append((str(erp), " / ".join(names)))
+            if out:
+                return sorted(out)
+        except Exception as e:
+            print(f"aviso: variantes de {p['id']} não lidas ({e}); a usar 001")
+        return [(f"{p['id']}001", None)]
+    return cached(f"variants:{p['id']}", SEARCH_TTL, run)
+
+
 def all_products():
     found = {}
     for q in ("parkside", "parkside bateria", "parkside carregador"):
         for p in search(q):
             found[p["id"]] = p
+    with ThreadPoolExecutor(max_workers=2) as ex:
+        vs = dict(zip(found, ex.map(variants, found.values())))
+    out = []
+    for pid, p in found.items():
+        v = vs[pid]
+        if len(v) == 1:
+            out.append({**p, "erp": v[0][0]})
+        else:  # várias variantes com stock próprio: uma entrada por variante
+            for erp, label in v:
+                title = f"{p['title']} · {label}" if label else f"{p['title']} ({erp[-3:]})"
+                out.append({**p, "id": erp, "productId": pid, "erp": erp, "title": title})
     order = {"battery": 0, "tool": 1, "other": 2}
-    return sorted(found.values(), key=lambda p: (order[p["kind"]], p["title"]))
+    return sorted(out, key=lambda p: (order[p["kind"]], p["title"]))
 
 
 # ---------- stock ----------
 
-def stock(pid):
+def stock(erp):
     def run():
         ids = ",".join(s["id"] for s in stores())
-        rows = get_json(STOCK_URL.format(item=f"{pid}001", ids=ids))
+        rows = get_json(STOCK_URL.format(item=erp, ids=ids))
         return {r["storeId"]: r["storeAvailabilityIndicator"] for r in rows}
-    return cached(f"stock:{pid}", STOCK_TTL, run)
+    return cached(f"stock:{erp}", STOCK_TTL, run)
 
 
-def _safe_stock(pid):
+def _safe_stock(erp):
     try:
-        return stock(pid)
+        return stock(erp)
     except Exception as e:  # produto retirado ou erro de rede
         return {"error": str(e)}
 
@@ -187,7 +251,7 @@ def build_data():
     """Tudo o que a página precisa, num só objecto."""
     products = all_products()
     with ThreadPoolExecutor(max_workers=2) as ex:
-        st = dict(zip([p["id"] for p in products], ex.map(_safe_stock, [p["id"] for p in products])))
+        st = dict(zip([p["id"] for p in products], ex.map(_safe_stock, [p["erp"] for p in products])))
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "stores": stores(),
